@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QR Studio — Create. Customize. Download.</title>
+<meta name="description" content="A free, private, browser-based QR code generator. Design, style, and download scannable QR codes for links, Wi-Fi, payments, contacts, events and more — no account, no server, no tracking.">
+<meta name="theme-color" content="#14161B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect x='1' y='1' width='24' height='24' rx='5' fill='%2314161B'/%3E%3Crect x='7.5' y='7.5' width='11' height='11' rx='2' stroke='%23F6F5F2' stroke-width='2' fill='none'/%3E%3Crect x='11' y='11' width='4' height='4' fill='%231F6F54'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA20lEQVR4nGNkwAJExKT/YxOnFLx59ZQRXQxFgFYW43MIE70tR7eLEZvlj+5fp5nlcoqacPabV08ZmdAV0NJybOYzIvseJonsSlo5AGYHRgjQG4w6gIVYheQkTmLSElEhQG7OIEYf0SHAwEBa7iDW0UMnDSAD7khLrOJflx8n2awBD4FRB4w6gKxcQE5qxwUGPAQG3AEkRQEtWktEhQC5LSRi9BEdArRqpg14Ghh4B2DrLtELvHn1lBGjY0LrfgEDAyQ9wTzOBHMJsiStLUcGdO+cokc51vinZ/ccADCYSqlBE/WDAAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhUlEQVR4nGNkgAIRMen/DESCN6+eMsLYjKRqRjeIEVnzo/vXidYsp6jJwMDAwMBEjmZk9Sy4TCZGM1YDCLkG3QKsBjAwMDBoViWh8K+3zcOqjgmrKAlg4A3AGQa4/EyRC7BFMVYXEJMWYACeF0hNiQwMDAxc3HyMcC+QYiuyeni2JDc7AwDd4yY1VEGXfgAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEq0lEQVR4nO3cMU4jSRiG4fJosk0RCRISIUfYo+wJ9yh7BEIkJBJEujEbrDzygLHd7e6q6q+e5wB2t+vlp1yyvSuduLm9+2h9Dcz3/va6a30NpZTS5CLEm69V4NWeVMTjqhn36k8kZA6tHfdqDy5kTlkr7MUfVMhMsXTYiz2YkJlryagXeSAxs4Qlwv5x7QOImaUs0dLsvwghs6a503rWhBYza5vb2OSgxUwtc1qbFLSYqW1qcxcHLWZamdLeRUGLmdYubfDqYzvoydmgTWd6cUmLJ4MWM7051+S3QYuZXp1q0x6aKEeDNp3p3XeNmtBE+RK06cxWHGvVhCbKb0GbzmzN52Z/trqQc16en1pfAmfcPzy2voQvfn2IuofpLOLtah33/gsBXUxoIW/ffg1bh938TaGYs7Rez10pbbYbrW+cdbWY1O9vr7smE1rM+VqtcfMtB7laRF09aNN5LLXXu+opx9Sba/2Ome9NWcuX56dqa/mzh/Pnz4Tcv/0a9fQf9+b27mNXK+hLblzI29XL+npTSJRugjadt62X9asSdE/7LNqp0UEXE7qXv26u08M6dhE0LEXQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNlC5+rLGmEb8908MH72sZakKPGHMpY933MEGPtKjHjHL/QwQ9ymKeM8LrEB/0CIs4RfrrER80YxE0UQRNlOHOoT9LPKNN3yefYkITRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNlOE/nDTHH3/9WeV5/v37nyrPk8SEJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJopfTprBLxr1y4QmiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImyvCftnt5fmp9CSzIhCaKoIki6MHcPzy2voRVxQedvoD8Lj7oUkS9N8LrMETQpYyxmKeMcv/DBF3KOIt66P7hcaj7Hu4ceqTFHdFQE5p8giaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKJ0EbQfe8nQwzpWCdq3RCilTgddTOhS+vjrZr5e1q+boNmuXmIupZRdKaXc3N591HiyS2/cFmU7elrT97fXXZff+t6/SMLuV09T+VDVCV1Kvy8E66k1mN7fXnfV99Cm7lhqr/ePUv4vu+aTinoMNdd533CzUw5RZ2u1vk2P7USdqeW6/gq69rZjT9RZWqznYbtdHNvtXwQnINvVy2DqIui9wxdF3P3rJeJDX7YZNc+k4Vqft8o+y0GUL0G3enMIUx1r1YQmytGgTWl6912j305oUdOrU23achDlZNCmNL051+TZCS1qenFJi7YcbMKlg/WioE1ptuLiCS1qWpnS3qQth6ipbWpzk/fQoqaWOa3NjtOn8ljLNUPz6mkrbJZ07Q7g6mM7WxCWskRLi8VoUjPXkkNx8ekqbKZY+j/8atsFYXPKWlvV1fe/wubQ2u+5qr2hE/a4ah4cNDmhEHe+Vqdf3Ry5iXzbejm+/Q9MVkjhqkOoygAAAABJRU5ErkJggg==">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   QR STUDIO — Design System
+   Ink/Paper monochrome UI with a single reserved accent.
+   ============================================================ */
+
+:root {
+  /* --- Color: light --- */
+  --ink: #14161B;
+  --ink-soft: #4A4D55;
+  --paper: #F6F5F2;
+  --surface: #FFFFFF;
+  --surface-sunken: #EFEEEA;
+  --line: #E3E1DA;
+  --line-strong: #CFCDC4;
+  --accent: #1F6F54;
+  --accent-ink: #0F4536;
+  --accent-tint: #E6F1EC;
+  --warn: #B8802E;
+  --warn-tint: #FBF1E1;
+  --error: #C1442F;
+  --error-tint: #FBEAE6;
+  --focus-ring: #1F6F54;
+
+  /* --- Type --- */
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- Scale --- */
+  --step-0: 0.9375rem;
+  --step-1: 1.0625rem;
+  --step-2: 1.3125rem;
+  --step-3: 1.75rem;
+  --step-4: 2.375rem;
+  --step-5: 3.1rem;
+
+  /* --- Radius / shadow --- */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --shadow-card: 0 1px 2px rgba(20,22,27,0.04), 0 8px 24px -12px rgba(20,22,27,0.12);
+  --shadow-pop: 0 4px 10px rgba(20,22,27,0.08), 0 16px 40px -16px rgba(20,22,27,0.22);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h: 64px;
+}
+
+[data-theme="dark"] {
+  --ink: #F2F1ED;
+  --ink-soft: #A7A9AE;
+  --paper: #101214;
+  --surface: #17191D;
+  --surface-sunken: #1D1F23;
+  --line: #2A2D32;
+  --line-strong: #3A3D43;
+  --accent: #3FA07E;
+  --accent-ink: #BEEBD8;
+  --accent-tint: #16261F;
+  --warn: #D9A75B;
+  --warn-tint: #2A2213;
+  --error: #E17A67;
+  --error-tint: #2A1714;
+  --focus-ring: #3FA07E;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  --shadow-pop: 0 4px 10px rgba(0,0,0,0.35), 0 16px 40px -16px rgba(0,0,0,0.6);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; top: -48px; left: 12px; z-index: 200;
+  background: var(--ink); color: var(--paper);
+  padding: 10px 16px; border-radius: var(--r-sm);
+  font-weight: 600; font-size: 0.9rem;
+  transition: top 0.15s var(--ease);
+}
+.skip-link:focus { top: 12px; }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============ LAYOUT PRIMITIVES ============ */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.panel-title-sm {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.control-hint {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.control-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.control-block { margin-bottom: 22px; }
+.control-block:last-child { margin-bottom: 0; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 11px 18px;
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: transform 0.12s var(--ease), background-color 0.15s var(--ease), border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--accent-ink); }
+[data-theme="dark"] .btn-primary:hover { background: var(--accent); color: var(--ink); }
+.btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent-ink); }
+[data-theme="dark"] .btn-secondary:hover { color: var(--accent); }
+.btn-ghost { background: transparent; color: var(--ink-soft); }
+.btn-ghost:hover { color: var(--ink); background: var(--surface-sunken); }
+.btn-sm { padding: 8px 14px; font-size: 0.84rem; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+.chip {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--surface);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+.chip:hover { border-color: var(--accent); color: var(--accent-ink); }
+[data-theme="dark"] .chip:hover { color: var(--accent); }
+
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: var(--r-md);
+  color: var(--ink-soft);
+  transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+.icon-btn:hover { background: var(--surface-sunken); color: var(--ink); }
+
+.icon-text-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 12px;
+  border-radius: var(--r-md);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+.icon-text-btn:hover { color: var(--ink); border-color: var(--line-strong); background: var(--surface-sunken); }
+.icon-text-btn.is-active { color: var(--accent-ink); border-color: var(--accent); background: var(--accent-tint); }
+[data-theme="dark"] .icon-text-btn.is-active { color: var(--accent); }
+
+.text-btn {
+  font-size: 0.82rem; font-weight: 600; color: var(--ink-soft);
+  padding: 4px 2px; border-bottom: 1px solid transparent;
+}
+.text-btn:hover { color: var(--accent-ink); border-color: currentColor; }
+[data-theme="dark"] .text-btn:hover { color: var(--accent); }
+.text-btn-danger:hover { color: var(--error); }
+
+/* ============ HEADER ============ */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1240px; margin: 0 auto;
+  height: var(--header-h);
+  padding: 0 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.brand {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.02rem;
+  color: var(--ink);
+}
+.brand-mark { color: var(--ink); flex-shrink: 0; }
+.badge-group { display: flex; align-items: center; gap: 6px; }
+.badge-free {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--accent-ink); background: var(--accent-tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  padding: 3px 8px; border-radius: 999px;
+}
+[data-theme="dark"] .badge-free { color: var(--accent); }
+.badge-beta {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--warn); background: var(--warn-tint);
+  border: 1px solid color-mix(in srgb, var(--warn) 35%, transparent);
+  padding: 3px 8px; border-radius: 999px;
+}
+.main-nav { display: flex; align-items: center; gap: 2px; margin-left: 12px; }
+.nav-link {
+  padding: 8px 14px; border-radius: var(--r-md);
+  font-size: 0.88rem; font-weight: 500; color: var(--ink-soft);
+  transition: color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+.nav-link:hover { color: var(--ink); }
+.nav-link.is-active { color: var(--ink); background: var(--surface-sunken); font-weight: 600; }
+.header-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.nav-toggle { display: none; }
+
+.mobile-nav {
+  display: none;
+  border-top: 1px solid var(--line);
+  padding: 8px 16px 14px;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-nav-link {
+  text-align: left; padding: 12px 10px; border-radius: var(--r-md);
+  font-weight: 500; color: var(--ink-soft); font-size: 0.95rem;
+}
+.mobile-nav-link.is-active { color: var(--ink); background: var(--surface-sunken); font-weight: 600; }
+
+/* ============ MAIN / VIEWS ============ */
+#main { max-width: 1240px; margin: 0 auto; padding: 0 24px 80px; }
+.view-header { padding: 40px 0 28px; }
+.view-header h1 { font-family: var(--font-display); font-size: var(--step-3); font-weight: 600; letter-spacing: -0.015em; }
+.view-sub { color: var(--ink-soft); margin-top: 6px; font-size: 0.95rem; }
+
+/* ============ INTRO (compact hero) ============ */
+.intro {
+  max-width: 640px;
+  padding: 52px 0 34px;
+  animation: rise 0.6s var(--ease) both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.intro-title {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--ink);
+}
+.intro-lede {
+  margin-top: 14px;
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 54ch;
+}
+.intro-privacy {
+  margin-top: 16px;
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.83rem; color: var(--accent-ink);
+  background: var(--accent-tint);
+  padding: 7px 12px; border-radius: 999px;
+  transition: background-color 0.15s var(--ease);
+}
+.intro-privacy:hover, .intro-privacy:focus-visible {
+  background: color-mix(in srgb, var(--accent-tint) 55%, var(--accent) 20%);
+}
+[data-theme="dark"] .intro-privacy { color: var(--accent); }
+
+/* ============ APP SHELL ============ */
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 20px;
+  animation: rise 0.6s 0.08s var(--ease) both;
+}
+.app-controls { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.app-preview {
+  position: sticky; top: calc(var(--header-h) + 20px);
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+/* ============ TYPE GRID ============ */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 8px;
+}
+.type-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  padding: 14px 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+.type-btn svg { width: 20px; height: 20px; }
+.type-btn:hover { border-color: var(--line-strong); color: var(--ink); }
+.type-btn.is-active {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  background: var(--accent-tint);
+}
+[data-theme="dark"] .type-btn.is-active { color: var(--accent); }
+
+/* ============ FORM FIELDS ============ */
+.field { margin-bottom: 16px; }
+.field:last-child { margin-bottom: 0; }
+.field-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  margin-bottom: 16px;
+}
+.field-row .field { margin-bottom: 0; }
+.field-row:last-child { margin-bottom: 0; }
+.field-narrow { grid-column: span 1; }
+
+.field label, .color-field-label {
+  display: block; font-size: 0.83rem; font-weight: 600; color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.field .optional { font-weight: 400; color: var(--ink-soft); opacity: 0.75; }
+
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="date"],
+.field input[type="time"],
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 11px 13px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  color: var(--ink);
+  font-size: 0.92rem;
+  transition: border-color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+[data-theme="dark"] .field input, [data-theme="dark"] .field select, [data-theme="dark"] .field textarea {
+  background: var(--surface-sunken);
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--ink-soft); opacity: 0.55; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); }
+.field textarea { resize: vertical; min-height: 44px; font-family: var(--font-body); }
+.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m5.5 8 4.5 4.5L14.5 8' stroke='%234A4D55' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+
+.field-error {
+  font-size: 0.78rem; color: var(--error); margin-top: 6px; font-weight: 500;
+}
+.field-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; line-height: 1.5; }
+
+.field.has-error input, .field.has-error textarea { border-color: var(--error); }
+
+.input-with-action { position: relative; }
+.input-with-action input { padding-right: 42px; }
+.input-action {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft); border-radius: var(--r-sm);
+}
+.input-action:hover { color: var(--ink); background: var(--surface-sunken); }
+
+.checkbox-field {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 0.86rem; color: var(--ink); cursor: pointer;
+  padding: 3px 0;
+}
+.checkbox-field input { width: 17px; height: 17px; accent-color: var(--accent); flex-shrink: 0; }
+.checkbox-muted { color: var(--ink-soft); font-size: 0.82rem; margin-top: 14px; }
+
+/* ============ SEGMENTED CONTROL ============ */
+.segmented {
+  display: inline-flex; flex-wrap: wrap; gap: 6px;
+}
+.segmented-btn {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 0.83rem; font-weight: 600;
+  color: var(--ink-soft);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+.segmented-btn:hover { border-color: var(--line-strong); color: var(--ink); }
+.segmented-btn.is-active {
+  border-color: var(--accent); color: var(--accent-ink); background: var(--accent-tint);
+}
+[data-theme="dark"] .segmented-btn.is-active { color: var(--accent); }
+
+/* ============ COLOR CONTROLS ============ */
+.color-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
+.color-input {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: 6px 10px; background: var(--paper);
+}
+[data-theme="dark"] .color-input { background: var(--surface-sunken); }
+.color-input input[type="color"] {
+  -webkit-appearance: none; appearance: none;
+  width: 26px; height: 26px; border: none; border-radius: 6px; padding: 0;
+  background: none; cursor: pointer; flex-shrink: 0;
+}
+.color-input input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+.color-input input[type="color"]::-webkit-color-swatch { border: 1px solid var(--line-strong); border-radius: 6px; }
+.hex-input {
+  border: none; background: none; width: 100%; font-family: var(--font-mono);
+  font-size: 0.83rem; color: var(--ink); text-transform: uppercase;
+}
+.hex-input:focus { outline: none; }
+
+/* ============ SLIDERS ============ */
+.slider-field { margin-bottom: 12px; }
+.slider-field label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink-soft); margin-bottom: 8px; }
+.slider-field input[type="range"] {
+  width: 100%; accent-color: var(--accent); height: 4px;
+}
+
+/* ============ LOGO UPLOAD ============ */
+.logo-upload { display: flex; align-items: center; gap: 12px; }
+.logo-preview {
+  width: 48px; height: 48px; border-radius: var(--r-md);
+  border: 1px dashed var(--line-strong);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft); overflow: hidden; flex-shrink: 0;
+  background: var(--paper);
+}
+[data-theme="dark"] .logo-preview { background: var(--surface-sunken); }
+.logo-preview img { width: 100%; height: 100%; object-fit: cover; }
+.logo-upload-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.logo-controls { margin-top: 16px; }
+
+/* ============ FRAME / CTA ============ */
+.frame-custom { margin-top: 12px; }
+.frame-custom input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--paper); color: var(--ink); font-size: 0.88rem; margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+[data-theme="dark"] .frame-custom input { background: var(--surface-sunken); }
+.frame-presets { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* ============ PREVIEW ============ */
+.preview-card { display: flex; flex-direction: column; gap: 16px; }
+.preview-stage { display: flex; justify-content: center; }
+.preview-frame {
+  width: 100%; max-width: 300px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 22px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+[data-theme="dark"] .preview-frame { background: var(--surface-sunken); }
+.qr-render {
+  width: 100%; aspect-ratio: 1 / 1;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.qr-render canvas, .qr-render svg { max-width: 100%; height: auto; border-radius: 4px; }
+.qr-placeholder {
+  width: 100%; height: 100%; min-height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--line-strong);
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--r-md);
+}
+.frame-caption {
+  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.06em;
+  font-size: 0.92rem; color: var(--ink); text-align: center; text-transform: uppercase;
+}
+
+.preview-meta { text-align: center; }
+.preview-type-pill {
+  display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--ink-soft); background: var(--surface-sunken);
+  padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+}
+.preview-content-preview {
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft);
+  word-break: break-word; line-height: 1.5;
+  max-height: 4.5em; overflow: hidden;
+}
+
+.scan-warning {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 0.82rem; color: var(--warn);
+  background: var(--warn-tint); border: 1px solid color-mix(in srgb, var(--warn) 35%, transparent);
+  padding: 10px 12px; border-radius: var(--r-md); line-height: 1.5;
+}
+
+.preview-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.preview-actions .icon-text-btn { flex: 1; justify-content: center; min-width: 0; }
+
+.download-group { border-top: 1px solid var(--line); padding-top: 16px; }
+.download-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.download-buttons .btn { padding: 10px 6px; font-size: 0.82rem; }
+
+.config-io-panel { padding: 20px 24px; }
+.config-io-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+
+/* ============ HISTORY ============ */
+.history-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; gap: 12px; flex-wrap: wrap;
+}
+.history-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.history-card {
+  display: flex; gap: 12px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-lg); padding: 14px;
+  box-shadow: var(--shadow-card);
+}
+.history-thumb {
+  width: 64px; height: 64px; flex-shrink: 0;
+  border-radius: var(--r-sm); overflow: hidden;
+  background: var(--paper); border: 1px solid var(--line);
+}
+[data-theme="dark"] .history-thumb { background: var(--surface-sunken); }
+.history-thumb-img { width: 100%; height: 100%; object-fit: contain; }
+.history-body { min-width: 0; flex: 1; }
+.history-body-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.history-type {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--ink-soft); background: var(--surface-sunken);
+  padding: 3px 8px; border-radius: 999px;
+}
+.star-btn { color: var(--line-strong); flex-shrink: 0; padding: 2px; }
+.star-btn:hover { color: var(--warn); }
+.star-btn.is-active { color: var(--warn); }
+.star-btn.is-active svg path { fill: currentColor; }
+.history-content {
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink);
+  margin: 8px 0 4px; overflow: hidden; text-overflow: ellipsis;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.history-date { font-size: 0.74rem; color: var(--ink-soft); }
+.history-actions { display: flex; gap: 12px; margin-top: 8px; }
+
+.empty-state {
+  display: none; flex-direction: column; align-items: center; text-align: center;
+  padding: 60px 20px; color: var(--ink-soft);
+}
+.empty-state.is-visible { display: flex; }
+.empty-state svg { color: var(--line-strong); margin-bottom: 14px; }
+.empty-state h3 { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin-bottom: 4px; }
+.empty-state p { font-size: 0.88rem; }
+
+/* ============ ABOUT ============ */
+/* ============ ABOUT / PRIVACY POLICY ============ */
+.about-copy { margin-bottom: 32px; }
+.about-copy p { color: var(--ink-soft); margin-bottom: 14px; line-height: 1.65; max-width: 62ch; }
+
+.policy-panel { max-width: 760px; margin-bottom: 40px; }
+.policy-meta {
+  font-size: 0.8rem; color: var(--ink-soft); font-family: var(--font-mono);
+  margin-bottom: 18px;
+}
+.policy-panel > p {
+  color: var(--ink-soft); line-height: 1.65; margin-bottom: 20px;
+}
+.policy-section { margin-bottom: 26px; }
+.policy-section:last-child { margin-bottom: 0; }
+.policy-section h3 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  margin-bottom: 10px; letter-spacing: -0.005em;
+}
+.policy-section p { color: var(--ink-soft); line-height: 1.65; margin-bottom: 10px; }
+.policy-section p:last-child { margin-bottom: 0; }
+.policy-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+[data-theme="dark"] .policy-section a { color: var(--accent); }
+.policy-list { list-style: none; padding: 0; margin: 0; }
+.policy-list li {
+  position: relative; padding-left: 20px; color: var(--ink-soft);
+  line-height: 1.6; margin-bottom: 10px;
+}
+.policy-list li:last-child { margin-bottom: 0; }
+.policy-list li::before {
+  content: ''; position: absolute; left: 0; top: 0.55em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.policy-section code {
+  font-family: var(--font-mono); font-size: 0.85em;
+  background: var(--surface-sunken); padding: 1px 6px; border-radius: 4px;
+}
+
+.faq { max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.faq-item summary {
+  cursor: pointer; font-weight: 600; font-size: 0.96rem;
+  list-style: none; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; font-size: 1.2rem; color: var(--ink-soft); flex-shrink: 0;
+  transition: transform 0.2s var(--ease);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin-top: 10px; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; max-width: 60ch; }
+
+/* ============ FOOTER ============ */
+.site-footer { border-top: 1px solid var(--line); padding: 40px 24px 24px; }
+.footer-inner {
+  max-width: 1240px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap;
+}
+.footer-brand p { color: var(--ink-soft); font-size: 0.88rem; margin-top: 8px; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links button { font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; }
+.footer-links button:hover { color: var(--ink); }
+.footer-note {
+  max-width: 1240px; margin: 28px auto 0; padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem; color: var(--ink-soft);
+}
+
+/* ============ TOASTS ============ */
+.toast-region {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 300; display: flex; flex-direction: column; gap: 8px;
+  align-items: center; width: 100%; max-width: 380px; padding: 0 16px;
+  pointer-events: none;
+}
+.toast {
+  background: var(--ink); color: var(--paper);
+  padding: 12px 18px; border-radius: var(--r-md);
+  font-size: 0.86rem; font-weight: 500;
+  box-shadow: var(--shadow-pop);
+  display: flex; align-items: center; gap: 8px;
+  animation: toast-in 0.28s var(--ease) both;
+  width: 100%; justify-content: center;
+}
+[data-theme="dark"] .toast { background: var(--surface); border: 1px solid var(--line-strong); }
+.toast.is-leaving { animation: toast-out 0.22s var(--ease) both; }
+.toast-icon { flex-shrink: 0; display: flex; }
+.toast.toast-error { background: var(--error); }
+[data-theme="dark"] .toast.toast-error { background: var(--error); border-color: transparent; color: var(--ink); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toast-out { to { opacity: 0; transform: translateY(6px); } }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 980px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .app-preview { position: static; order: -1; }
+  .intro-title { font-size: var(--step-3); }
+}
+
+@media (max-width: 720px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .mobile-nav.is-open { display: flex; }
+  .header-inner { padding: 0 16px; }
+  #main { padding: 0 16px 64px; }
+  .intro { padding: 32px 0 24px; }
+  .intro-title { font-size: var(--step-3); }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .field-row .field { margin-bottom: 16px; }
+  .field-row .field:last-child { margin-bottom: 0; }
+  .type-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
+  .download-buttons { grid-template-columns: repeat(2, 1fr); }
+  .preview-actions { flex-direction: column; }
+  .preview-actions .icon-text-btn { width: 100%; }
+  .history-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; }
+  .site-footer { padding: 32px 16px 20px; }
+}
+
+@media (max-width: 400px) {
+  .type-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#generator" data-view="generator" aria-label="QR Studio — go to generator">
+      <svg class="brand-mark" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" rx="5" stroke="currentColor" stroke-width="2"/>
+        <rect x="7.5" y="7.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+        <rect x="11" y="11" width="4" height="4" rx="0.5" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-word">QR Studio</span>
+    </a>
+    <div class="badge-group">
+      <span class="badge-free">Free</span>
+      <span class="badge-beta">Beta</span>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <button type="button" class="nav-link is-active" data-view="generator">Generator</button>
+      <button type="button" class="nav-link" data-view="history">History</button>
+      <button type="button" class="nav-link" data-view="about">About</button>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch theme, currently light">
+        <svg id="themeIconLight" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.6M12 18.9v2.6M4.3 4.3l1.8 1.8M17.9 17.9l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.3 19.7l1.8-1.8M17.9 6.1l1.8-1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg id="themeIconDark" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" hidden><path d="M20.2 14.6A8.6 8.6 0 1 1 9.4 3.8a7 7 0 0 0 10.8 10.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg id="themeIconAuto" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" hidden><circle cx="12" cy="12" r="8.6" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.4a8.6 8.6 0 0 1 0 17.2Z" fill="currentColor"/></svg>
+      </button>
+      <button type="button" id="mobileNavToggle" class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileNav" class="mobile-nav" aria-label="Mobile" hidden>
+    <button type="button" class="mobile-nav-link is-active" data-view="generator">Generator</button>
+    <button type="button" class="mobile-nav-link" data-view="history">History</button>
+    <button type="button" class="mobile-nav-link" data-view="about">About</button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ GENERATOR VIEW ============ -->
+  <section id="view-generator" class="view" data-view-panel="generator">
+    <div class="intro">
+      <h1 class="intro-title">Create a QR code that actually looks designed.</h1>
+      <p class="intro-lede">Pick a type, enter your content, and watch it appear instantly. Style the colors, shape, and logo, then export it print-ready — entirely in your browser.</p>
+      <button type="button" class="intro-privacy" data-view="about" data-scroll-to="privacy">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4 5.8v6c0 5 3.4 8.9 8 10.2 4.6-1.3 8-5.2 8-10.2v-6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2.1 2.1L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Nothing you type here ever leaves your device.
+      </button>
+    </div>
+
+    <div class="app-shell">
+
+      <!-- ---------- CONTROLS ---------- -->
+      <div class="app-controls">
+
+        <section class="panel" aria-labelledby="type-heading">
+          <h2 id="type-heading" class="panel-title">Type</h2>
+          <div class="type-grid" role="radiogroup" aria-label="QR code type" id="typeGrid">
+
+            <button type="button" class="type-btn is-active" role="radio" aria-checked="true" data-type="url">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8.3 11.7a3 3 0 0 0 4.2.3l2.2-1.9a3 3 0 1 0-3.9-4.5l-1.3 1.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M11.7 8.3a3 3 0 0 0-4.2-.3l-2.2 1.9a3 3 0 1 0 3.9 4.5l1.2-1.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>URL</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="text">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 5.5h12M4 10h12M4 14.5h7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Text</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="whatsapp">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15.5 5.9 12A6 6 0 1 1 8.6 14.6L5 15.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.7 9.2c.2 1.6 1.5 2.9 3.1 3.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>WhatsApp</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="email">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3.2" y="5" width="13.6" height="10" rx="1.6" stroke="currentColor" stroke-width="1.5"/><path d="m4 6 6 5 6-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Email</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="phone">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.1 4.3 8 4c.4 1 .9 1.9 1.5 2.7.3.4.2.9-.1 1.2l-1 1a9 9 0 0 0 3.7 3.7l1-1c.3-.3.8-.4 1.2-.1.8.6 1.7 1.1 2.7 1.5l-.3 1.9c-.1.7-.7 1.2-1.4 1.1-5-.6-9-4.6-9.6-9.6-.1-.7.4-1.3 1.1-1.4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span>Phone</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="sms">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 5.8h12a1 1 0 0 1 1 1v5.4a1 1 0 0 1-1 1H9.8L6 16v-2.8H4a1 1 0 0 1-1-1V6.8a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="9.5" r=".9" fill="currentColor"/><circle cx="10" cy="9.5" r=".9" fill="currentColor"/><circle cx="13" cy="9.5" r=".9" fill="currentColor"/></svg>
+              <span>SMS</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="wifi">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 8.3a9 9 0 0 1 13 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 11.1a5.2 5.2 0 0 1 8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.6 13.9a1.9 1.9 0 0 1 2.8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="16.2" r=".9" fill="currentColor"/></svg>
+              <span>Wi-Fi</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="vcard">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.6" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="9" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4.6 12.6c.5-1 1.3-1.5 2.4-1.5s1.9.5 2.4 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12.3 8.3h3M12.3 11h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>vCard</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="upi">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.3" stroke="currentColor" stroke-width="1.5"/><text x="10" y="13.6" text-anchor="middle" font-size="8.6" fill="currentColor" font-family="sans-serif">₹</text></svg>
+              <span>UPI</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="maps">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 17.5s5.5-5.1 5.5-9.2a5.5 5.5 0 1 0-11 0c0 4.1 5.5 9.2 5.5 9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.2" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
+              <span>Maps</span>
+            </button>
+
+            <button type="button" class="type-btn" role="radio" aria-checked="false" data-type="event">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4.6" width="14" height="12" rx="1.6" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.2h14" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3v3M13.5 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="12" r="1.1" fill="currentColor"/></svg>
+              <span>Event</span>
+            </button>
+
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="content-heading">
+          <h2 id="content-heading" class="panel-title">Content</h2>
+          <form id="contentForm" novalidate>
+
+            <fieldset class="field-group" data-type="url">
+              <legend class="sr-only">URL details</legend>
+              <div class="field">
+                <label for="url-value">Website URL</label>
+                <input type="text" id="url-value" name="url-value" inputmode="url" placeholder="example.com" autocomplete="off" aria-describedby="url-value-error">
+                <p class="field-error" id="url-value-error" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="text" hidden>
+              <legend class="sr-only">Text details</legend>
+              <div class="field">
+                <label for="text-value">Message</label>
+                <textarea id="text-value" name="text-value" rows="4" placeholder="Write anything — a note, a quote, instructions…" aria-describedby="text-value-error"></textarea>
+                <p class="field-error" id="text-value-error" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="whatsapp" hidden>
+              <legend class="sr-only">WhatsApp details</legend>
+              <div class="field-row">
+                <div class="field field-narrow">
+                  <label for="wa-country">Country code</label>
+                  <input type="text" id="wa-country" name="wa-country" inputmode="numeric" placeholder="91" aria-describedby="wa-country-error">
+                  <p class="field-error" id="wa-country-error" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="wa-phone">Phone number</label>
+                  <input type="text" id="wa-phone" name="wa-phone" inputmode="tel" placeholder="98765 43210" aria-describedby="wa-phone-error">
+                  <p class="field-error" id="wa-phone-error" role="alert" hidden></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="wa-message">Message <span class="optional">(optional)</span></label>
+                <textarea id="wa-message" name="wa-message" rows="3" placeholder="Hi! I'd like to ask about…"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="email" hidden>
+              <legend class="sr-only">Email details</legend>
+              <div class="field">
+                <label for="email-address">Email address</label>
+                <input type="text" id="email-address" name="email-address" inputmode="email" placeholder="hello@example.com" aria-describedby="email-address-error">
+                <p class="field-error" id="email-address-error" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="email-subject">Subject <span class="optional">(optional)</span></label>
+                <input type="text" id="email-subject" name="email-subject" placeholder="Let's talk">
+              </div>
+              <div class="field">
+                <label for="email-body">Message <span class="optional">(optional)</span></label>
+                <textarea id="email-body" name="email-body" rows="3" placeholder="Write your message…"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="phone" hidden>
+              <legend class="sr-only">Phone details</legend>
+              <div class="field">
+                <label for="phone-number">Phone number</label>
+                <input type="text" id="phone-number" name="phone-number" inputmode="tel" placeholder="+91 98765 43210" aria-describedby="phone-number-error">
+                <p class="field-error" id="phone-number-error" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="sms" hidden>
+              <legend class="sr-only">SMS details</legend>
+              <div class="field">
+                <label for="sms-number">Phone number</label>
+                <input type="text" id="sms-number" name="sms-number" inputmode="tel" placeholder="+91 98765 43210" aria-describedby="sms-number-error">
+                <p class="field-error" id="sms-number-error" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="sms-message">Message <span class="optional">(optional)</span></label>
+                <textarea id="sms-message" name="sms-message" rows="3" placeholder="Text to pre-fill…"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="wifi" hidden>
+              <legend class="sr-only">Wi-Fi details</legend>
+              <div class="field">
+                <label for="wifi-ssid">Network name (SSID)</label>
+                <input type="text" id="wifi-ssid" name="wifi-ssid" placeholder="Home Network" aria-describedby="wifi-ssid-error">
+                <p class="field-error" id="wifi-ssid-error" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="wifi-password">Password</label>
+                <div class="input-with-action">
+                  <input type="password" id="wifi-password" name="wifi-password" placeholder="Network password" autocomplete="off" aria-describedby="wifi-password-error">
+                  <button type="button" class="input-action" id="wifiPasswordToggle" aria-label="Show password" aria-pressed="false">
+                    <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2 10s2.8-5.5 8-5.5S18 10 18 10s-2.8 5.5-8 5.5S2 10 2 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="10" r="2.2" stroke="currentColor" stroke-width="1.4"/></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="wifi-password-error" role="alert" hidden></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="wifi-security">Security</label>
+                  <select id="wifi-security" name="wifi-security">
+                    <option value="WPA" selected>WPA / WPA2</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">None (open network)</option>
+                  </select>
+                </div>
+                <label class="checkbox-field field-narrow" for="wifi-hidden">
+                  <input type="checkbox" id="wifi-hidden" name="wifi-hidden">
+                  <span>Hidden network</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="vcard" hidden>
+              <legend class="sr-only">Contact details</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="vcard-first">First name</label>
+                  <input type="text" id="vcard-first" name="vcard-first" placeholder="Asha" aria-describedby="vcard-first-error">
+                  <p class="field-error" id="vcard-first-error" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="vcard-last">Last name <span class="optional">(optional)</span></label>
+                  <input type="text" id="vcard-last" name="vcard-last" placeholder="Rao">
+                </div>
+              </div>
+              <div class="field">
+                <label for="vcard-org">Organization <span class="optional">(optional)</span></label>
+                <input type="text" id="vcard-org" name="vcard-org" placeholder="Studio Name">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="vcard-phone">Phone <span class="optional">(optional)</span></label>
+                  <input type="text" id="vcard-phone" name="vcard-phone" inputmode="tel" placeholder="+91 98765 43210">
+                </div>
+                <div class="field">
+                  <label for="vcard-email">Email <span class="optional">(optional)</span></label>
+                  <input type="text" id="vcard-email" name="vcard-email" inputmode="email" placeholder="asha@example.com" aria-describedby="vcard-email-error">
+                  <p class="field-error" id="vcard-email-error" role="alert" hidden></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="vcard-website">Website <span class="optional">(optional)</span></label>
+                <input type="text" id="vcard-website" name="vcard-website" placeholder="example.com">
+              </div>
+              <div class="field">
+                <label for="vcard-address">Address <span class="optional">(optional)</span></label>
+                <input type="text" id="vcard-address" name="vcard-address" placeholder="Street, City, State">
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="upi" hidden>
+              <legend class="sr-only">UPI payment details</legend>
+              <div class="field">
+                <label for="upi-id">UPI ID</label>
+                <input type="text" id="upi-id" name="upi-id" placeholder="name@bank" autocapitalize="none" aria-describedby="upi-id-error">
+                <p class="field-error" id="upi-id-error" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="upi-name">Payee name</label>
+                <input type="text" id="upi-name" name="upi-name" placeholder="Full name" aria-describedby="upi-name-error">
+                <p class="field-error" id="upi-name-error" role="alert" hidden></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="upi-amount">Amount <span class="optional">(optional)</span></label>
+                  <input type="text" id="upi-amount" name="upi-amount" inputmode="decimal" placeholder="500" aria-describedby="upi-amount-error">
+                  <p class="field-error" id="upi-amount-error" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="upi-note">Note <span class="optional">(optional)</span></label>
+                  <input type="text" id="upi-note" name="upi-note" placeholder="Invoice #204">
+                </div>
+              </div>
+              <p class="field-note">This QR code only carries a payment request. QR Studio does not process, store, or route any payment.</p>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="maps" hidden>
+              <legend class="sr-only">Location details</legend>
+              <div class="field">
+                <label for="maps-address">Location or address</label>
+                <input type="text" id="maps-address" name="maps-address" placeholder="Hanuman Digital Studio, Warangal" aria-describedby="maps-address-error">
+                <p class="field-error" id="maps-address-error" role="alert" hidden></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="maps-lat">Latitude <span class="optional">(optional)</span></label>
+                  <input type="text" id="maps-lat" name="maps-lat" inputmode="decimal" placeholder="17.9689">
+                </div>
+                <div class="field">
+                  <label for="maps-lng">Longitude <span class="optional">(optional)</span></label>
+                  <input type="text" id="maps-lng" name="maps-lng" inputmode="decimal" placeholder="79.5941">
+                </div>
+              </div>
+              <p class="field-note">Add coordinates for a precise pin, or leave them blank to search by address.</p>
+            </fieldset>
+
+            <fieldset class="field-group" data-type="event" hidden>
+              <legend class="sr-only">Event details</legend>
+              <div class="field">
+                <label for="event-title">Event name</label>
+                <input type="text" id="event-title" name="event-title" placeholder="Studio Launch Party" aria-describedby="event-title-error">
+                <p class="field-error" id="event-title-error" role="alert" hidden></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="event-start-date">Start date</label>
+                  <input type="date" id="event-start-date" name="event-start-date" aria-describedby="event-start-date-error">
+                  <p class="field-error" id="event-start-date-error" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="event-start-time">Start time</label>
+                  <input type="time" id="event-start-time" name="event-start-time">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="event-end-date">End date <span class="optional">(optional)</span></label>
+                  <input type="date" id="event-end-date" name="event-end-date">
+                </div>
+                <div class="field">
+                  <label for="event-end-time">End time <span class="optional">(optional)</span></label>
+                  <input type="time" id="event-end-time" name="event-end-time">
+                </div>
+              </div>
+              <div class="field">
+                <label for="event-location">Location <span class="optional">(optional)</span></label>
+                <input type="text" id="event-location" name="event-location" placeholder="Venue or address">
+              </div>
+              <div class="field">
+                <label for="event-description">Description <span class="optional">(optional)</span></label>
+                <textarea id="event-description" name="event-description" rows="3" placeholder="Details guests should know…"></textarea>
+              </div>
+            </fieldset>
+
+          </form>
+        </section>
+
+        <section class="panel" aria-labelledby="customize-heading">
+          <h2 id="customize-heading" class="panel-title">Customize</h2>
+
+          <div class="control-block">
+            <span class="control-label">Colors</span>
+            <div class="color-row">
+              <div class="color-field">
+                <span class="color-field-label">Foreground</span>
+                <div class="color-input">
+                  <input type="color" id="fgColor" value="#14161B" aria-label="Foreground color picker">
+                  <input type="text" id="fgColorHex" class="hex-input" value="#14161B" maxlength="7" aria-label="Foreground color hex value">
+                </div>
+              </div>
+              <div class="color-field">
+                <span class="color-field-label">Background</span>
+                <div class="color-input">
+                  <input type="color" id="bgColor" value="#FFFFFF" aria-label="Background color picker">
+                  <input type="text" id="bgColorHex" class="hex-input" value="#FFFFFF" maxlength="7" aria-label="Background color hex value">
+                </div>
+              </div>
+            </div>
+            <label class="checkbox-field" for="bgTransparent">
+              <input type="checkbox" id="bgTransparent">
+              <span>Transparent background</span>
+            </label>
+          </div>
+
+          <div class="control-block">
+            <span class="control-label" id="pattern-label">Pattern</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="pattern-label" id="patternGroup">
+              <button type="button" class="segmented-btn is-active" role="radio" aria-checked="true" data-value="square">Square</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="rounded">Rounded</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="dots">Dots</button>
+            </div>
+          </div>
+
+          <div class="control-block">
+            <span class="control-label" id="eye-label">Eye style</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="eye-label" id="eyeGroup">
+              <button type="button" class="segmented-btn is-active" role="radio" aria-checked="true" data-value="square">Square</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="rounded">Rounded</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="circle">Circle</button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="qrSize">Export size</label>
+              <select id="qrSize">
+                <option value="256">256 × 256 px</option>
+                <option value="512" selected>512 × 512 px</option>
+                <option value="1024">1024 × 1024 px</option>
+                <option value="2048">2048 × 2048 px</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="qrMargin">Quiet zone</label>
+              <select id="qrMargin">
+                <option value="0">None</option>
+                <option value="3">Small</option>
+                <option value="6" selected>Medium</option>
+                <option value="10">Large</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control-block">
+            <span class="control-label" id="ec-label">Error correction</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="ec-label" id="ecGroup">
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="L">Low</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="M">Medium</button>
+              <button type="button" class="segmented-btn is-active" role="radio" aria-checked="true" data-value="Q">Quartile</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="H">High</button>
+            </div>
+            <p class="control-hint">Higher correction keeps codes scannable even if part of the image is covered — useful when adding a logo, but it makes the pattern denser.</p>
+          </div>
+
+          <div class="control-block">
+            <span class="control-label">Logo</span>
+            <div class="logo-upload">
+              <div class="logo-preview" id="logoPreview" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17.5V7.8c0-.7.6-1.3 1.3-1.3h3l1.4-1.8h4.6l1.4 1.8h3c.7 0 1.3.6 1.3 1.3v9.7c0 .7-.6 1.3-1.3 1.3H5.3c-.7 0-1.3-.6-1.3-1.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="12.3" r="3.2" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div class="logo-upload-actions">
+                <button type="button" class="btn btn-secondary btn-sm" id="logoUploadBtn">Upload image</button>
+                <button type="button" class="btn btn-ghost btn-sm" id="logoRemoveBtn" hidden>Remove</button>
+                <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden>
+              </div>
+            </div>
+            <div class="logo-controls" id="logoControls" hidden>
+              <div class="slider-field">
+                <label for="logoSize">Logo size</label>
+                <input type="range" id="logoSize" min="0.15" max="0.42" step="0.01" value="0.28">
+              </div>
+              <div class="slider-field">
+                <label for="logoMargin">Logo padding</label>
+                <input type="range" id="logoMargin" min="0" max="8" step="0.5" value="2.5">
+              </div>
+              <label class="checkbox-field" for="logoBackdrop">
+                <input type="checkbox" id="logoBackdrop" checked>
+                <span>White plate behind logo</span>
+              </label>
+            </div>
+            <p class="field-note" id="logoFormatNote">PNG, JPG, WebP, or SVG. Square images work best.</p>
+          </div>
+
+          <div class="control-block">
+            <span class="control-label" id="frame-label">Frame / call to action</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="frame-label" id="frameGroup">
+              <button type="button" class="segmented-btn is-active" role="radio" aria-checked="true" data-value="none">None</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="scanme">Scan Me</button>
+              <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="custom">Custom</button>
+            </div>
+            <div class="frame-custom" id="frameCustomWrap" hidden>
+              <input type="text" id="frameCustomText" maxlength="24" placeholder="SCAN FOR MENU">
+              <div class="frame-presets">
+                <button type="button" class="chip" data-preset="SCAN TO VISIT">Scan to visit</button>
+                <button type="button" class="chip" data-preset="SCAN FOR MENU">Scan for menu</button>
+                <button type="button" class="chip" data-preset="SCAN TO PAY">Scan to pay</button>
+                <button type="button" class="chip" data-preset="SCAN FOR MORE">Scan for more</button>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
+      <!-- ---------- PREVIEW ---------- -->
+      <div class="app-preview">
+        <section class="panel preview-card" aria-labelledby="preview-heading">
+          <h2 id="preview-heading" class="sr-only">Preview</h2>
+
+          <div class="preview-stage">
+            <div class="preview-frame" id="previewFrame">
+              <div class="qr-render" id="qrCanvasWrap"></div>
+              <p class="frame-caption" id="frameCaption" hidden></p>
+            </div>
+          </div>
+
+          <div class="preview-meta">
+            <span class="preview-type-pill" id="previewTypeLabel">URL</span>
+            <p class="preview-content-preview" id="previewContentPreview">Enter a website to begin.</p>
+          </div>
+
+          <p class="scan-warning" id="scanWarning" role="alert" hidden></p>
+
+          <div class="preview-actions">
+            <button type="button" class="icon-text-btn" id="resetBtn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M15.8 6.5A6.5 6.5 0 1 0 17 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.5 3v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Reset
+            </button>
+            <button type="button" class="icon-text-btn" id="saveHistoryBtn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 3h8a1 1 0 0 1 1 1v13l-5-3-5 3V4a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              Save
+            </button>
+            <button type="button" class="icon-text-btn" id="copyPayloadBtn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7.3" y="7.3" width="9.2" height="9.7" rx="1.4" stroke="currentColor" stroke-width="1.5"/><path d="M12.7 7.3V4.9a1.4 1.4 0 0 0-1.4-1.4H4.9a1.4 1.4 0 0 0-1.4 1.4v8.4a1.4 1.4 0 0 0 1.4 1.4h2.4" stroke="currentColor" stroke-width="1.5"/></svg>
+              Copy data
+            </button>
+            <button type="button" class="icon-text-btn" id="copyImageBtn" hidden>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4" width="14" height="12" rx="1.6" stroke="currentColor" stroke-width="1.5"/><circle cx="7.2" cy="8" r="1.2" stroke="currentColor" stroke-width="1.3"/><path d="m4.5 14.5 3.8-4 2.6 2.8 2-2.2 2.6 3.4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              Copy image
+            </button>
+          </div>
+
+          <label class="checkbox-field checkbox-muted" for="excludeFromHistory">
+            <input type="checkbox" id="excludeFromHistory">
+            <span>Don't save this QR to history</span>
+          </label>
+
+          <div class="download-group">
+            <span class="control-label">Download</span>
+            <div class="download-buttons">
+              <button type="button" class="btn btn-primary" data-format="png">PNG</button>
+              <button type="button" class="btn btn-secondary" data-format="svg">SVG</button>
+              <button type="button" class="btn btn-secondary" data-format="jpeg">JPG</button>
+              <button type="button" class="btn btn-secondary" data-format="pdf">PDF</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel config-io-panel" aria-labelledby="config-io-heading">
+          <h2 id="config-io-heading" class="panel-title-sm">Configuration</h2>
+          <p class="control-hint">Move this setup to another browser or device.</p>
+          <div class="config-io-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="exportConfigBtn">Export configuration</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="importConfigBtn">Import configuration</button>
+            <input type="file" id="importConfigFile" accept="application/json" hidden>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ HISTORY VIEW ============ -->
+  <section id="view-history" class="view" data-view-panel="history" hidden>
+    <div class="view-header">
+      <h1>History</h1>
+      <p class="view-sub">Every code you save stays only on this device.</p>
+    </div>
+
+    <div class="history-toolbar">
+      <div class="segmented" role="radiogroup" aria-label="Filter history" id="historyFilter">
+        <button type="button" class="segmented-btn is-active" role="radio" aria-checked="true" data-value="all">All</button>
+        <button type="button" class="segmented-btn" role="radio" aria-checked="false" data-value="favorites">Favorites</button>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm" id="clearHistoryBtn">Clear all</button>
+    </div>
+
+    <div class="history-grid" id="historyList"></div>
+
+    <div class="empty-state" id="historyEmpty">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="7" y="7" width="26" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/><rect x="12.5" y="12.5" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><path d="M23 12.5h4.5M23 27.5h4.5M12.5 23v4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <h3>No QR codes yet</h3>
+      <p>Your generated QR codes will appear here.</p>
+    </div>
+
+    <div class="empty-state" id="favoritesEmpty" hidden>
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 8.5 23.4 16l8.2.9-6.1 5.6 1.7 8.1L20 26.4l-7.2 4.2 1.7-8.1-6.1-5.6 8.2-.9L20 8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <h3>Nothing saved yet</h3>
+      <p>Favorite a QR code to find it quickly.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT VIEW ============ -->
+  <section id="view-about" class="view" data-view-panel="about" hidden>
+    <div class="view-header">
+      <h1>About QR Studio</h1>
+    </div>
+
+    <div class="about-copy">
+      <p>QR Studio is a free, browser-based QR code generator built for individuals, creators, and small businesses. There's no account to create, nothing to install, and no server involved in generating your code — the QR is drawn directly on your device, using the same open-source engine each time you press download.</p>
+      <p>It supports the formats people actually need day to day: links, Wi-Fi credentials, contact cards, UPI payment requests, calendar invites, and more — each with sensible validation so you don't end up with a code that fails to scan.</p>
+    </div>
+
+    <section class="panel policy-panel" id="privacy" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading" class="panel-title">Privacy Policy</h2>
+      <p class="policy-meta">Last updated September 5, 2026</p>
+
+      <p>QR Studio is built so that using it doesn't require trusting anyone with your data. This page explains exactly what happens — and just as importantly, what doesn't.</p>
+
+      <div class="policy-section">
+        <h3>The short version</h3>
+        <ul class="policy-list">
+          <li>QR codes are generated entirely inside your browser. Whatever you type — a Wi-Fi password, a UPI ID, a phone number — is never sent to a server, because no server is involved in generating your code.</li>
+          <li>There's no account, no login, and nothing tied to your identity.</li>
+          <li>History and saved codes live only in your browser's local storage, on your own device. We never see them.</li>
+          <li>There's no analytics and no tracking script anywhere on this page.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h3>What's stored, and where</h3>
+        <p>When you save a QR code to History, or change a setting like your theme preference, that information is written to your browser's <code>localStorage</code> — a storage area built into the browser itself, scoped to this page, and never transmitted anywhere. It stays on your device until you delete it, either with the "Clear all" button in History or by clearing this site's data in your browser settings. It won't follow you to another browser or device, because it was never sent anywhere to begin with.</p>
+        <p>For QR types that can carry sensitive information — Wi-Fi passwords, contact details, UPI payment requests — QR Studio defaults "Don't save this QR to history" to on, so nothing is retained on-device unless you choose to keep it.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Third-party resources</h3>
+        <p>This page loads a font library (Google Fonts) and two open-source code libraries used to draw and export QR codes (served from unpkg and cdnjs), so it doesn't have to ship everything itself. Loading any resource from the web means the provider serving it sees standard technical request information, like your IP address and browser type — that's true of any site using a CDN or web font, not something specific to QR Studio. None of these providers ever receive anything you type into the generator; that content never leaves your browser.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Clipboard access</h3>
+        <p>The "Copy data" and "Copy image" buttons only touch your clipboard when you explicitly click them, to place the QR content or image there. QR Studio never reads your clipboard at any other time.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Cookies and tracking</h3>
+        <p>QR Studio does not use cookies, does not run analytics, and does not include any advertising or tracking scripts.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Children's privacy</h3>
+        <p>QR Studio doesn't knowingly collect data from anyone, of any age — it doesn't collect data at all. Everything described above stays on your own device, regardless of who's using it.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Changes to this policy</h3>
+        <p>If how QR Studio works ever changes in a way that affects your privacy, this page will be updated along with the "Last updated" date above.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>Questions</h3>
+        <p>Reach out to <a href="mailto:hello@hanumandigitalstudio.com">hello@hanumandigitalstudio.com</a> with any privacy questions.</p>
+      </div>
+    </section>
+
+    <div class="faq" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="panel-title">Frequently asked questions</h2>
+
+      <details class="faq-item">
+        <summary>Are QR codes free to generate?</summary>
+        <p>Yes. Every feature in QR Studio — styling, logos, all export formats — is free, with no limits or watermarks.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need an account?</summary>
+        <p>No. Open the page and start generating. Nothing is tied to an identity or a login.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does QR Studio store my data?</summary>
+        <p>Only on your own device, and only if you choose to save a code to History. Nothing is transmitted to a server.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use these QR codes commercially?</summary>
+        <p>Yes. The QR codes you generate are standard, unencumbered QR codes — you're free to print and use them for business purposes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I add my own logo?</summary>
+        <p>Yes, from the Customize panel. QR Studio automatically increases error correction to help keep the code scannable once a logo is added.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I generate UPI QR codes?</summary>
+        <p>Yes. QR Studio builds a standard UPI payment-request payload from your UPI ID, name, and optional amount. It only generates the code — it doesn't process or route any payment.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I print the QR codes I generate?</summary>
+        <p>Yes. Export at a higher size (1024px or 2048px) for crisp printing, and keep a comfortable quiet zone around the code so scanners can find it easily.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <svg class="brand-mark" width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="24" height="24" rx="5" stroke="currentColor" stroke-width="2"/>
+          <rect x="7.5" y="7.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="11" y="11" width="4" height="4" rx="0.5" fill="var(--accent)"/>
+        </svg>
+        <span class="brand-word">QR Studio</span>
+      </div>
+      <p>Free QR generation, right in your browser.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <button type="button" data-view="generator">Generator</button>
+      <button type="button" data-view="history">History</button>
+      <button type="button" data-view="about">About</button>
+      <button type="button" data-view="about" data-scroll-to="privacy">Privacy</button>
+      <button type="button" data-view="about" data-scroll-to="faq">FAQ</button>
+    </nav>
+  </div>
+  <p class="footer-note">Made for the web. No signup required.</p>
+</footer>
+
+<div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+<template id="historyItemTemplate">
+  <article class="history-card">
+    <button type="button" class="history-thumb" data-action="reopen">
+      <img alt="" class="history-thumb-img">
+    </button>
+    <div class="history-body">
+      <div class="history-body-top">
+        <span class="history-type"></span>
+        <button type="button" class="star-btn" data-action="favorite" aria-label="Favorite this QR code" aria-pressed="false">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3.2 12.2 8l5.3.6-4 3.6 1.1 5.3L10 14.7l-4.6 2.8 1.1-5.3-4-3.6L7.8 8 10 3.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <p class="history-content"></p>
+      <span class="history-date"></span>
+      <div class="history-actions">
+        <button type="button" class="text-btn" data-action="reopen">Reopen</button>
+        <button type="button" class="text-btn" data-action="duplicate">Duplicate</button>
+        <button type="button" class="text-btn text-btn-danger" data-action="delete">Delete</button>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script src="https://unpkg.com/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script>
+'use strict';
+
+/* ============================================================
+   QR STUDIO — Application logic
+   Everything runs client-side. Nothing here ever sends user
+   content to a server.
+   ============================================================ */
+
+(function () {
+
+  /* ---------- Constants ---------- */
+
+  const TYPE_LABELS = {
+    url: 'URL', text: 'Text', whatsapp: 'WhatsApp', email: 'Email',
+    phone: 'Phone', sms: 'SMS', wifi: 'Wi-Fi', vcard: 'Contact',
+    upi: 'UPI', maps: 'Maps', event: 'Event'
+  };
+
+  const SENSITIVE_TYPES = ['wifi', 'vcard', 'upi'];
+
+  const EMPTY_HINTS = {
+    url: 'Enter a website to begin.',
+    text: 'Type a message to generate a code.',
+    whatsapp: 'Add a country code and number to begin.',
+    email: 'Enter an email address to begin.',
+    phone: 'Enter a phone number to begin.',
+    sms: 'Enter a phone number to begin.',
+    wifi: 'Enter a network name to begin.',
+    vcard: 'Add at least a first name to begin.',
+    upi: 'Enter a UPI ID and payee name to begin.',
+    maps: 'Enter a location to begin.',
+    event: 'Add an event name and start date to begin.'
+  };
+
+  const FIELD_IDS_BY_TYPE = {
+    url: ['url-value'],
+    text: ['text-value'],
+    whatsapp: ['wa-country', 'wa-phone', 'wa-message'],
+    email: ['email-address', 'email-subject', 'email-body'],
+    phone: ['phone-number'],
+    sms: ['sms-number', 'sms-message'],
+    wifi: ['wifi-ssid', 'wifi-password', 'wifi-security', 'wifi-hidden'],
+    vcard: ['vcard-first', 'vcard-last', 'vcard-org', 'vcard-phone', 'vcard-email', 'vcard-website', 'vcard-address'],
+    upi: ['upi-id', 'upi-name', 'upi-amount', 'upi-note'],
+    maps: ['maps-address', 'maps-lat', 'maps-lng'],
+    event: ['event-title', 'event-start-date', 'event-start-time', 'event-end-date', 'event-end-time', 'event-location', 'event-description']
+  };
+
+  const EYE_STYLE_MAP = {
+    square: { corners: 'square', dot: 'square' },
+    rounded: { corners: 'extra-rounded', dot: 'dot' },
+    circle: { corners: 'dot', dot: 'dot' }
+  };
+
+  const HISTORY_KEY = 'qrstudio-history-v1';
+  const THEME_KEY = 'qrstudio-theme';
+  const DEBOUNCE_MS = 220;
+
+  /* ---------- DOM shortcuts ---------- */
+
+  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $all = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
+
+  const els = {}; // populated in init()
+
+  /* ---------- State ---------- */
+
+  const state = {
+    type: 'url',
+    themePref: 'system',
+    historyFilter: 'all',
+    excludeFromHistory: false,
+    excludeFromHistoryUserSet: false,
+    customize: {
+      fg: '#14161B',
+      bg: '#FFFFFF',
+      bgTransparent: false,
+      pattern: 'square',
+      eyeStyle: 'square',
+      size: 512,
+      marginPercent: 6,
+      ecLevel: 'Q',
+      ecAutoBumped: false,
+      logo: null, // { raw, dataUrl }
+      logoSizeRatio: 0.28,
+      logoMarginPercent: 2.5,
+      logoBackdrop: true,
+      frameStyle: 'none',
+      frameText: ''
+    }
+  };
+
+  let qrCode = null;
+  let currentResult = { status: 'empty' };
+  let debounceTimer = null;
+  let historyItems = [];
+  let defaultLogoIconHtml = '';
+
+  /* ============================================================
+     UTILITIES
+     ============================================================ */
+
+  function val(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+  function checked(id) {
+    const el = document.getElementById(id);
+    return el ? el.checked : false;
+  }
+  function isValidEmail(str) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+  }
+  function isValidUpiId(str) {
+    return /^[\w.-]{2,255}@[a-zA-Z][a-zA-Z0-9]{1,64}$/.test(str);
+  }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function escapeWifi(str) { return String(str).replace(/([\\;,":])/g, '\\$1'); }
+  function clampNum(v, min, max, fallback) {
+    const n = Number(v);
+    if (Number.isNaN(n)) return fallback;
+    return Math.min(max, Math.max(min, n));
+  }
+  function clampChoice(v, allowed, fallback) {
+    return allowed.includes(v) ? v : fallback;
+  }
+  function sanitizeHex(v, fallback) {
+    return /^#[0-9A-Fa-f]{6}$/.test(v || '') ? v : fallback;
+  }
+  function formatDate(ts) {
+    try {
+      return new Date(ts).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    } catch (e) {
+      return new Date(ts).toDateString();
+    }
+  }
+  function debounce(fn, wait) {
+    return function (...args) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => fn.apply(null, args), wait);
+    };
+  }
+  function readFileAsDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error || new Error('Could not read file.'));
+      reader.readAsDataURL(file);
+    });
+  }
+  function blobToDataUrl(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error || new Error('Could not read image data.'));
+      reader.readAsDataURL(blob);
+    });
+  }
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error('Could not read this image.'));
+      img.src = src;
+    });
+  }
+  function roundRectPath(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  /* ---------- Toasts ---------- */
+
+  function showToast(message, type) {
+    const el = document.createElement('div');
+    el.className = 'toast' + (type === 'error' ? ' toast-error' : '');
+    el.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    el.textContent = message;
+    els.toastRegion.appendChild(el);
+    setTimeout(() => {
+      el.classList.add('is-leaving');
+      setTimeout(() => el.remove(), 240);
+    }, 2400);
+  }
+
+  /* ============================================================
+     FIELD VALIDATION / ERROR DISPLAY
+     ============================================================ */
+
+  function setFieldError(id, msg) {
+    const errorEl = document.getElementById(id + '-error');
+    const input = document.getElementById(id);
+    if (errorEl) {
+      errorEl.textContent = msg || '';
+      errorEl.hidden = !msg;
+    }
+    if (input) {
+      const wrap = input.closest('.field');
+      if (wrap) wrap.classList.toggle('has-error', !!msg);
+    }
+  }
+  function clearAllFieldErrors() {
+    $all('.field-error').forEach((e) => { e.hidden = true; e.textContent = ''; });
+    $all('.field.has-error').forEach((f) => f.classList.remove('has-error'));
+  }
+
+  /* ============================================================
+     PAYLOAD BUILDERS — one per QR type
+     Each returns { status: 'empty' | 'invalid' | 'ready', payload, previewText, errors }
+     ============================================================ */
+
+  function buildUrl() {
+    const raw = val('url-value');
+    if (!raw) return { status: 'empty' };
+    let normalized = raw;
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(normalized)) normalized = 'https://' + normalized;
+    try {
+      const u = new URL(normalized);
+      if (!u.hostname.includes('.') && u.hostname !== 'localhost') {
+        return { status: 'invalid', errors: [{ id: 'url-value', msg: 'Please enter a valid website.' }] };
+      }
+      return { status: 'ready', payload: u.toString(), previewText: u.toString() };
+    } catch (e) {
+      return { status: 'invalid', errors: [{ id: 'url-value', msg: 'Please enter a valid website.' }] };
+    }
+  }
+
+  function buildText() {
+    const raw = val('text-value');
+    if (!raw) return { status: 'empty' };
+    return { status: 'ready', payload: raw, previewText: raw };
+  }
+
+  function buildWhatsapp() {
+    const cc = val('wa-country').replace(/\D/g, '');
+    const phone = val('wa-phone').replace(/\D/g, '');
+    const msg = val('wa-message');
+    if (!cc && !phone) return { status: 'empty' };
+    const errors = [];
+    if (!cc) errors.push({ id: 'wa-country', msg: 'Country code is required.' });
+    else if (cc.length > 4) errors.push({ id: 'wa-country', msg: 'Enter just the calling code, e.g. 91.' });
+    if (!phone) errors.push({ id: 'wa-phone', msg: 'Phone number is required.' });
+    else if (phone.length < 6) errors.push({ id: 'wa-phone', msg: 'Enter a valid phone number.' });
+    if (errors.length) return { status: 'invalid', errors };
+    const payload = `https://wa.me/${cc}${phone}` + (msg ? `?text=${encodeURIComponent(msg)}` : '');
+    return { status: 'ready', payload, previewText: payload };
+  }
+
+  function buildEmail() {
+    const email = val('email-address');
+    const subject = val('email-subject');
+    const body = val('email-body');
+    if (!email) return { status: 'empty' };
+    if (!isValidEmail(email)) {
+      return { status: 'invalid', errors: [{ id: 'email-address', msg: 'Please enter a valid email address.' }] };
+    }
+    const params = [];
+    if (subject) params.push('subject=' + encodeURIComponent(subject));
+    if (body) params.push('body=' + encodeURIComponent(body));
+    const payload = `mailto:${email}` + (params.length ? '?' + params.join('&') : '');
+    return { status: 'ready', payload, previewText: payload };
+  }
+
+  function buildPhone() {
+    const raw = val('phone-number');
+    if (!raw) return { status: 'empty' };
+    const cleaned = raw.replace(/[^\d+]/g, '');
+    const digits = cleaned.replace(/\D/g, '');
+    if (digits.length < 6 || digits.length > 15) {
+      return { status: 'invalid', errors: [{ id: 'phone-number', msg: 'Enter a valid phone number.' }] };
+    }
+    return { status: 'ready', payload: `tel:${cleaned}`, previewText: `tel:${cleaned}` };
+  }
+
+  function buildSms() {
+    const raw = val('sms-number');
+    const msg = val('sms-message');
+    if (!raw) return { status: 'empty' };
+    const cleaned = raw.replace(/[^\d+]/g, '');
+    const digits = cleaned.replace(/\D/g, '');
+    if (digits.length < 6 || digits.length > 15) {
+      return { status: 'invalid', errors: [{ id: 'sms-number', msg: 'Enter a valid phone number.' }] };
+    }
+    const payload = `sms:${cleaned}` + (msg ? `?body=${encodeURIComponent(msg)}` : '');
+    return { status: 'ready', payload, previewText: payload };
+  }
+
+  function buildWifi() {
+    const ssid = val('wifi-ssid');
+    const password = val('wifi-password');
+    const securityEl = document.getElementById('wifi-security');
+    const security = securityEl ? securityEl.value : 'WPA';
+    const hidden = checked('wifi-hidden');
+    if (!ssid) return { status: 'empty' };
+    const errors = [];
+    if (security !== 'nopass' && !password) {
+      errors.push({ id: 'wifi-password', msg: 'Password is required for a secured network.' });
+    }
+    if (errors.length) return { status: 'invalid', errors };
+    let payload = `WIFI:T:${security};S:${escapeWifi(ssid)};`;
+    if (security !== 'nopass') payload += `P:${escapeWifi(password)};`;
+    if (hidden) payload += 'H:true;';
+    payload += ';';
+    return { status: 'ready', payload, previewText: `Wi-Fi network “${ssid}”` };
+  }
+
+  function buildVcard() {
+    const first = val('vcard-first');
+    const last = val('vcard-last');
+    const org = val('vcard-org');
+    const phone = val('vcard-phone');
+    const email = val('vcard-email');
+    const website = val('vcard-website');
+    const address = val('vcard-address');
+    if (!first && !last && !org && !phone && !email && !website && !address) return { status: 'empty' };
+    const errors = [];
+    if (!first) errors.push({ id: 'vcard-first', msg: 'First name is required.' });
+    if (email && !isValidEmail(email)) errors.push({ id: 'vcard-email', msg: 'Please enter a valid email address.' });
+    if (errors.length) return { status: 'invalid', errors };
+    const lines = ['BEGIN:VCARD', 'VERSION:3.0'];
+    lines.push(`N:${last};${first};;;`);
+    lines.push(`FN:${[first, last].filter(Boolean).join(' ')}`);
+    if (org) lines.push(`ORG:${org}`);
+    if (phone) lines.push(`TEL;TYPE=CELL:${phone}`);
+    if (email) lines.push(`EMAIL:${email}`);
+    if (website) lines.push(`URL:${/^https?:\/\//i.test(website) ? website : 'https://' + website}`);
+    if (address) lines.push(`ADR:;;${address};;;;`);
+    lines.push('END:VCARD');
+    return {
+      status: 'ready',
+      payload: lines.join('\n'),
+      previewText: `Contact card · ${[first, last].filter(Boolean).join(' ')}`
+    };
+  }
+
+  function buildUpi() {
+    const id = val('upi-id');
+    const name = val('upi-name');
+    const amountRaw = val('upi-amount');
+    const note = val('upi-note');
+    if (!id && !name) return { status: 'empty' };
+    const errors = [];
+    if (!id) errors.push({ id: 'upi-id', msg: 'Please enter a valid UPI ID.' });
+    else if (!isValidUpiId(id)) errors.push({ id: 'upi-id', msg: 'Please enter a valid UPI ID, like name@bank.' });
+    if (!name) errors.push({ id: 'upi-name', msg: 'Payee name is required.' });
+    let amount = '';
+    if (amountRaw) {
+      const num = Number(amountRaw);
+      if (Number.isNaN(num) || num < 0) errors.push({ id: 'upi-amount', msg: 'Enter a valid amount.' });
+      else amount = num.toFixed(2);
+    }
+    if (errors.length) return { status: 'invalid', errors };
+    let payload = `upi://pay?pa=${encodeURIComponent(id)}&pn=${encodeURIComponent(name)}`;
+    if (amount) payload += `&am=${amount}`;
+    payload += '&cu=INR';
+    if (note) payload += `&tn=${encodeURIComponent(note)}`;
+    return { status: 'ready', payload, previewText: `UPI payment to ${name}${amount ? ' · ₹' + amount : ''}` };
+  }
+
+  function buildMaps() {
+    const address = val('maps-address');
+    const lat = val('maps-lat');
+    const lng = val('maps-lng');
+    if (!address && !lat && !lng) return { status: 'empty' };
+    let query = '';
+    if (lat || lng) {
+      const latN = Number(lat), lngN = Number(lng);
+      const bothPresent = lat !== '' && lng !== '';
+      if (!bothPresent || Number.isNaN(latN) || Number.isNaN(lngN) || latN < -90 || latN > 90 || lngN < -180 || lngN > 180) {
+        return { status: 'invalid', errors: [{ id: 'maps-address', msg: 'Enter both a valid latitude and longitude, or leave them blank.' }] };
+      }
+      query = `${latN},${lngN}`;
+    } else if (address) {
+      query = address;
+    } else {
+      return { status: 'invalid', errors: [{ id: 'maps-address', msg: 'Enter a location or address.' }] };
+    }
+    const payload = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    return { status: 'ready', payload, previewText: address || query };
+  }
+
+  function toIcsDate(dateStr, timeStr) {
+    const [y, m, d] = dateStr.split('-');
+    const [hh, mm] = (timeStr || '00:00').split(':');
+    return `${y}${m}${d}T${pad(hh)}${pad(mm)}00`;
+  }
+
+  function buildEvent() {
+    const title = val('event-title');
+    const startDate = val('event-start-date');
+    const startTime = val('event-start-time');
+    let endDate = val('event-end-date');
+    let endTime = val('event-end-time');
+    const location = val('event-location');
+    const description = val('event-description');
+    if (!title && !startDate) return { status: 'empty' };
+    const errors = [];
+    if (!title) errors.push({ id: 'event-title', msg: 'Event name is required.' });
+    if (!startDate) errors.push({ id: 'event-start-date', msg: 'Start date is required.' });
+    if (errors.length) return { status: 'invalid', errors };
+
+    if (!endDate) endDate = startDate;
+    const hadEndTime = !!endTime;
+    if (!endTime) {
+      if (startTime) {
+        const [sh, sm] = startTime.split(':').map(Number);
+        const d = new Date(2000, 0, 1, sh, sm);
+        d.setHours(d.getHours() + 1);
+        endTime = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      } else {
+        endTime = '00:00';
+      }
+    }
+    if (endDate < startDate || (endDate === startDate && hadEndTime && startTime && endTime < startTime)) {
+      return { status: 'invalid', errors: [{ id: 'event-start-date', msg: 'End date/time must be after the start.' }] };
+    }
+
+    const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT'];
+    lines.push(`SUMMARY:${title}`);
+    lines.push(`DTSTART:${toIcsDate(startDate, startTime)}`);
+    lines.push(`DTEND:${toIcsDate(endDate, endTime)}`);
+    if (location) lines.push(`LOCATION:${location}`);
+    if (description) lines.push(`DESCRIPTION:${description.replace(/\n/g, '\\n')}`);
+    lines.push('END:VEVENT', 'END:VCALENDAR');
+    return { status: 'ready', payload: lines.join('\n'), previewText: `${title} · ${startDate}` };
+  }
+
+  const BUILDERS = {
+    url: buildUrl, text: buildText, whatsapp: buildWhatsapp, email: buildEmail,
+    phone: buildPhone, sms: buildSms, wifi: buildWifi, vcard: buildVcard,
+    upi: buildUpi, maps: buildMaps, event: buildEvent
+  };
+
+  /* ============================================================
+     FIELD SNAPSHOT / RESTORE (for history + config import/export)
+     ============================================================ */
+
+  function collectFieldsForType(type) {
+    const ids = FIELD_IDS_BY_TYPE[type] || [];
+    const out = {};
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      out[id] = el.type === 'checkbox' ? el.checked : el.value;
+    });
+    return out;
+  }
+
+  function applyFieldsForType(type, fields) {
+    const ids = FIELD_IDS_BY_TYPE[type] || [];
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el || !(id in fields)) return;
+      if (el.type === 'checkbox') el.checked = !!fields[id];
+      else el.value = fields[id];
+    });
+  }
+
+  /* ============================================================
+     LOGO COMPOSITING (adds an optional white plate behind the logo)
+     ============================================================ */
+
+  async function composeLogo(rawSrc, withBackdrop) {
+    const img = await loadImage(rawSrc);
+    const size = 480;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    let pad2 = 0;
+    if (withBackdrop) {
+      const r = size * 0.16;
+      ctx.fillStyle = '#FFFFFF';
+      roundRectPath(ctx, size * 0.04, size * 0.04, size * 0.92, size * 0.92, r);
+      ctx.fill();
+      pad2 = size * 0.16;
+    }
+    const box = size - pad2 * 2;
+    const ratio = Math.min(box / img.naturalWidth, box / img.naturalHeight);
+    const dw = img.naturalWidth * ratio, dh = img.naturalHeight * ratio;
+    const dx = (size - dw) / 2, dy = (size - dh) / 2;
+    ctx.drawImage(img, dx, dy, dw, dh);
+    return canvas.toDataURL('image/png');
+  }
+
+  /* ============================================================
+     QR RENDERING
+     ============================================================ */
+
+  function computeOptions(payload) {
+    const c = state.customize;
+    const eye = EYE_STYLE_MAP[c.eyeStyle] || EYE_STYLE_MAP.square;
+    const marginPx = Math.round(c.size * (c.marginPercent / 100));
+    const options = {
+      width: c.size,
+      height: c.size,
+      type: 'canvas',
+      data: payload,
+      margin: marginPx,
+      qrOptions: { errorCorrectionLevel: c.ecLevel },
+      dotsOptions: { color: c.fg, type: c.pattern },
+      backgroundOptions: { color: c.bgTransparent ? 'transparent' : c.bg },
+      cornersSquareOptions: { color: c.fg, type: eye.corners },
+      cornersDotOptions: { color: c.fg, type: eye.dot }
+    };
+    if (c.logo && c.logo.dataUrl) {
+      options.image = c.logo.dataUrl;
+      options.imageOptions = {
+        crossOrigin: 'anonymous',
+        margin: Math.round(c.size * (c.logoMarginPercent / 100)),
+        imageSize: c.logoSizeRatio,
+        hideBackgroundDots: true
+      };
+    }
+    return options;
+  }
+
+  function evaluateLogoWarning() {
+    const c = state.customize;
+    if (!c.logo) {
+      els.scanWarning.hidden = true;
+      return;
+    }
+    if ((c.ecLevel === 'L' || c.ecLevel === 'M') && !c.ecAutoBumped) {
+      c.ecLevel = 'Q';
+      c.ecAutoBumped = true;
+      setSegmentedActive(els.ecGroup, 'Q');
+      showToast('Boosted error correction for the logo.');
+    }
+    if (c.logoSizeRatio > 0.32) {
+      els.scanWarning.hidden = false;
+      els.scanWarning.textContent = 'This logo is large relative to the code. If scans fail, reduce the logo size or increase the quiet zone.';
+    } else {
+      els.scanWarning.hidden = true;
+    }
+  }
+
+  function updateFrameCaption() {
+    const c = state.customize;
+    if (c.frameStyle === 'none') {
+      els.frameCaption.hidden = true;
+      return;
+    }
+    const text = c.frameStyle === 'scanme' ? 'SCAN ME' : c.frameText;
+    if (!text) {
+      els.frameCaption.hidden = true;
+      return;
+    }
+    els.frameCaption.hidden = false;
+    els.frameCaption.textContent = text;
+  }
+
+  function showPlaceholder() {
+    els.qrCanvasWrap.innerHTML = '';
+    const ph = document.createElement('div');
+    ph.className = 'qr-placeholder';
+    ph.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="13" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M14.5 14.5h6.5M14.5 18h3.5M18.5 18v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+    els.qrCanvasWrap.appendChild(ph);
+    els.frameCaption.hidden = true;
+    els.scanWarning.hidden = true;
+  }
+
+  function setDownloadEnabled(enabled) {
+    els.copyPayloadBtn.disabled = !enabled;
+    els.saveHistoryBtn.disabled = !enabled;
+    if (els.copyImageBtn) els.copyImageBtn.disabled = !enabled;
+    $all('.download-buttons .btn').forEach((b) => { b.disabled = !enabled; });
+  }
+
+  function renderQr(payload) {
+    try {
+      evaluateLogoWarning();
+      const options = computeOptions(payload);
+      if (!qrCode) {
+        qrCode = new QRCodeStyling(options);
+      } else {
+        qrCode.update(options);
+      }
+      els.qrCanvasWrap.innerHTML = '';
+      qrCode.append(els.qrCanvasWrap);
+      updateFrameCaption();
+      setDownloadEnabled(true);
+    } catch (err) {
+      console.error(err);
+      showPlaceholder();
+      setDownloadEnabled(false);
+      showToast('Could not render this QR code.', 'error');
+    }
+  }
+
+  function updatePreviewMeta(result) {
+    els.previewTypeLabel.textContent = TYPE_LABELS[state.type];
+    if (result.status === 'ready') {
+      els.previewContentPreview.textContent = result.previewText || result.payload;
+    } else if (result.status === 'invalid') {
+      els.previewContentPreview.textContent = 'Fix the highlighted field to generate a code.';
+    } else {
+      els.previewContentPreview.textContent = EMPTY_HINTS[state.type] || 'Fill in the details to generate a code.';
+    }
+  }
+
+  function runUpdate() {
+    const builder = BUILDERS[state.type];
+    const result = builder ? builder() : { status: 'empty' };
+    currentResult = result;
+    clearAllFieldErrors();
+    if (result.status === 'invalid' && result.errors) {
+      result.errors.forEach((e) => setFieldError(e.id, e.msg));
+    }
+    updatePreviewMeta(result);
+    if (result.status !== 'ready') {
+      showPlaceholder();
+      setDownloadEnabled(false);
+      return;
+    }
+    renderQr(result.payload);
+  }
+
+  const scheduleUpdateDebounced = debounce(runUpdate, DEBOUNCE_MS);
+  function scheduleUpdate(immediate) {
+    if (immediate) {
+      clearTimeout(debounceTimer);
+      runUpdate();
+    } else {
+      scheduleUpdateDebounced();
+    }
+  }
+
+  /* ============================================================
+     TYPE SELECTION
+     ============================================================ */
+
+  function selectType(type) {
+    if (!TYPE_LABELS[type]) return;
+    state.type = type;
+    $all('.type-btn').forEach((b) => {
+      const active = b.dataset.type === type;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
+    $all('.field-group').forEach((fg) => { fg.hidden = fg.dataset.type !== type; });
+    clearAllFieldErrors();
+    if (!state.excludeFromHistoryUserSet) {
+      state.excludeFromHistory = SENSITIVE_TYPES.includes(type);
+      els.excludeFromHistory.checked = state.excludeFromHistory;
+    }
+    scheduleUpdate(true);
+  }
+
+  /* ============================================================
+     SEGMENTED CONTROLS
+     ============================================================ */
+
+  function setSegmentedActive(container, value) {
+    Array.from(container.children).forEach((b) => {
+      const active = b.dataset.value === value;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
+  }
+
+  function wireSegmented(container, onChange) {
+    container.addEventListener('click', (e) => {
+      const btn = e.target.closest('.segmented-btn');
+      if (!btn) return;
+      setSegmentedActive(container, btn.dataset.value);
+      onChange(btn.dataset.value);
+    });
+  }
+
+  /* ============================================================
+     CUSTOMIZE PANEL SYNC (used after history reopen / import)
+     ============================================================ */
+
+  function syncCustomizeControlsFromState() {
+    const c = state.customize;
+    els.fgColor.value = c.fg;
+    els.fgColorHex.value = c.fg.toUpperCase();
+    els.bgColor.value = c.bg;
+    els.bgColorHex.value = c.bg.toUpperCase();
+    els.bgTransparent.checked = c.bgTransparent;
+    setSegmentedActive(els.patternGroup, c.pattern);
+    setSegmentedActive(els.eyeGroup, c.eyeStyle);
+    setSegmentedActive(els.ecGroup, c.ecLevel);
+    setSegmentedActive(els.frameGroup, c.frameStyle);
+    els.qrSize.value = String(c.size);
+    els.qrMargin.value = String(c.marginPercent);
+    els.logoSize.value = String(c.logoSizeRatio);
+    els.logoMargin.value = String(c.logoMarginPercent);
+    els.logoBackdrop.checked = c.logoBackdrop;
+    els.frameCustomText.value = c.frameText || '';
+    els.frameCustomWrap.hidden = c.frameStyle !== 'custom';
+  }
+
+  function setLogoUiPresent(dataUrl) {
+    els.logoPreview.innerHTML = `<img src="${dataUrl}" alt="">`;
+    els.logoRemoveBtn.hidden = false;
+    els.logoControls.hidden = false;
+  }
+  function setLogoUiAbsent() {
+    els.logoPreview.innerHTML = defaultLogoIconHtml;
+    els.logoRemoveBtn.hidden = true;
+    els.logoControls.hidden = true;
+    els.scanWarning.hidden = true;
+  }
+
+  /* ============================================================
+     HISTORY
+     ============================================================ */
+
+  function loadHistory() {
+    try {
+      const raw = localStorage.getItem(HISTORY_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      console.error(e);
+      return [];
+    }
+  }
+
+  function persistHistory() {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(historyItems));
+      return true;
+    } catch (e) {
+      console.error(e);
+      if (e && e.name === 'QuotaExceededError') {
+        showToast('Storage is full. Delete some history to save more.', 'error');
+      } else {
+        showToast('Could not save to history on this device.', 'error');
+      }
+      return false;
+    }
+  }
+
+  async function generateThumbnail(size) {
+    size = size || 160;
+    if (!qrCode) return '';
+    try {
+      const blob = await qrCode.getRawData('png');
+      if (!blob) return '';
+      const dataUrl = await blobToDataUrl(blob);
+      const img = await loadImage(dataUrl);
+      const c = document.createElement('canvas');
+      c.width = size;
+      c.height = size;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, size, size);
+      ctx.drawImage(img, 0, 0, size, size);
+      return c.toDataURL('image/png');
+    } catch (e) {
+      console.error(e);
+      return '';
+    }
+  }
+
+  function entriesEquivalent(a, b) {
+    if (!a || !b) return false;
+    return a.type === b.type && a.payload === b.payload &&
+      JSON.stringify(a.customize) === JSON.stringify(b.customize);
+  }
+
+  async function buildHistoryEntry() {
+    const thumb = await generateThumbnail();
+    const c = state.customize;
+    return {
+      id: 'h_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+      type: state.type,
+      payload: currentResult.payload,
+      previewText: currentResult.previewText,
+      thumb,
+      fields: collectFieldsForType(state.type),
+      customize: {
+        fg: c.fg, bg: c.bg, bgTransparent: c.bgTransparent, pattern: c.pattern,
+        eyeStyle: c.eyeStyle, size: c.size, marginPercent: c.marginPercent, ecLevel: c.ecLevel,
+        logo: c.logo ? { dataUrl: c.logo.dataUrl } : null,
+        logoSizeRatio: c.logoSizeRatio, logoMarginPercent: c.logoMarginPercent, logoBackdrop: c.logoBackdrop,
+        frameStyle: c.frameStyle, frameText: c.frameText
+      },
+      favorite: false,
+      createdAt: Date.now()
+    };
+  }
+
+  function addHistoryEntry(entry) {
+    historyItems.unshift(entry);
+    const ok = persistHistory();
+    if (!ok) { historyItems.shift(); return false; }
+    renderHistory();
+    return true;
+  }
+
+  async function saveToHistory() {
+    if (!currentResult || currentResult.status !== 'ready') return;
+    if (state.excludeFromHistory) {
+      showToast("This QR is set not to save — untick the box below to save it.");
+      return;
+    }
+    const entry = await buildHistoryEntry();
+    if (addHistoryEntry(entry)) showToast('Saved to history.');
+  }
+
+  async function maybeAutoSaveHistory() {
+    if (state.excludeFromHistory) return;
+    if (!currentResult || currentResult.status !== 'ready') return;
+    const entry = await buildHistoryEntry();
+    if (entriesEquivalent(historyItems[0], entry)) return;
+    addHistoryEntry(entry);
+  }
+
+  function deleteHistoryEntry(id) {
+    historyItems = historyItems.filter((h) => h.id !== id);
+    persistHistory();
+    renderHistory();
+  }
+
+  function toggleFavorite(id) {
+    const item = historyItems.find((h) => h.id === id);
+    if (!item) return;
+    item.favorite = !item.favorite;
+    persistHistory();
+    renderHistory();
+  }
+
+  function clearAllHistory() {
+    if (!historyItems.length) return;
+    const ok = window.confirm("Clear all saved QR history? This can't be undone.");
+    if (!ok) return;
+    historyItems = [];
+    persistHistory();
+    renderHistory();
+    showToast('History cleared.');
+  }
+
+  function restoreStateFromEntry(item) {
+    selectType(item.type);
+    applyFieldsForType(item.type, item.fields || {});
+
+    const c = item.customize || {};
+    Object.assign(state.customize, {
+      fg: sanitizeHex(c.fg, '#14161B'),
+      bg: sanitizeHex(c.bg, '#FFFFFF'),
+      bgTransparent: !!c.bgTransparent,
+      pattern: clampChoice(c.pattern, ['square', 'rounded', 'dots'], 'square'),
+      eyeStyle: clampChoice(c.eyeStyle, ['square', 'rounded', 'circle'], 'square'),
+      size: clampChoice(Number(c.size), [256, 512, 1024, 2048], 512),
+      marginPercent: clampNum(c.marginPercent, 0, 15, 6),
+      ecLevel: clampChoice(c.ecLevel, ['L', 'M', 'Q', 'H'], 'Q'),
+      ecAutoBumped: true,
+      logoSizeRatio: clampNum(c.logoSizeRatio, 0.1, 0.5, 0.28),
+      logoMarginPercent: clampNum(c.logoMarginPercent, 0, 10, 2.5),
+      logoBackdrop: c.logoBackdrop !== false,
+      frameStyle: clampChoice(c.frameStyle, ['none', 'scanme', 'custom'], 'none'),
+      frameText: typeof c.frameText === 'string' ? c.frameText.slice(0, 24) : ''
+    });
+
+    if (c.logo && c.logo.dataUrl) {
+      state.customize.logo = { raw: c.logo.dataUrl, dataUrl: c.logo.dataUrl };
+      setLogoUiPresent(c.logo.dataUrl);
+    } else {
+      state.customize.logo = null;
+      setLogoUiAbsent();
+    }
+
+    syncCustomizeControlsFromState();
+    scheduleUpdate(true);
+  }
+
+  function reopenHistoryEntry(id) {
+    const item = historyItems.find((h) => h.id === id);
+    if (!item) return;
+    restoreStateFromEntry(item);
+    setView('generator');
+    showToast('Loaded from history.');
+  }
+
+  function duplicateHistoryEntry(id) {
+    const item = historyItems.find((h) => h.id === id);
+    if (!item) return;
+    const clone = JSON.parse(JSON.stringify(item));
+    clone.id = 'h_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+    clone.createdAt = Date.now();
+    clone.favorite = false;
+    addHistoryEntry(clone);
+    showToast('Duplicated.');
+  }
+
+  function renderHistory() {
+    const filter = state.historyFilter;
+    const items = filter === 'favorites' ? historyItems.filter((h) => h.favorite) : historyItems;
+    els.historyList.innerHTML = '';
+    items.forEach((item) => {
+      const node = els.historyItemTemplate.content.cloneNode(true);
+      const card = node.querySelector('.history-card');
+      card.dataset.id = item.id;
+      const img = node.querySelector('.history-thumb-img');
+      img.src = item.thumb || '';
+      node.querySelector('.history-type').textContent = TYPE_LABELS[item.type] || item.type;
+      node.querySelector('.history-content').textContent = item.previewText || item.payload || '';
+      node.querySelector('.history-date').textContent = formatDate(item.createdAt);
+      const starBtn = node.querySelector('.star-btn');
+      starBtn.classList.toggle('is-active', !!item.favorite);
+      starBtn.setAttribute('aria-pressed', item.favorite ? 'true' : 'false');
+      els.historyList.appendChild(node);
+    });
+    const isEmpty = items.length === 0;
+    if (filter === 'favorites') {
+      els.favoritesEmpty.classList.toggle('is-visible', isEmpty);
+      els.historyEmpty.classList.remove('is-visible');
+    } else {
+      els.historyEmpty.classList.toggle('is-visible', isEmpty);
+      els.favoritesEmpty.classList.remove('is-visible');
+    }
+  }
+
+  /* ============================================================
+     LOGO UPLOAD
+     ============================================================ */
+
+  async function onLogoFile(e) {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if (!file) return;
+    const okTypes = ['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml'];
+    if (!okTypes.includes(file.type)) {
+      showToast('Please upload a PNG, JPG, WebP, or SVG image.', 'error');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      showToast('That image is too large. Please use a file under 5 MB.', 'error');
+      return;
+    }
+    try {
+      const rawDataUrl = await readFileAsDataUrl(file);
+      const effective = await composeLogo(rawDataUrl, state.customize.logoBackdrop);
+      state.customize.logo = { raw: rawDataUrl, dataUrl: effective };
+      state.customize.ecAutoBumped = false;
+      setLogoUiPresent(rawDataUrl);
+      showToast('Logo added.');
+      scheduleUpdate(true);
+    } catch (err) {
+      console.error(err);
+      showToast('Could not read that image file.', 'error');
+    }
+  }
+
+  function onLogoRemove() {
+    state.customize.logo = null;
+    setLogoUiAbsent();
+    scheduleUpdate(true);
+    showToast('Logo removed.');
+  }
+
+  async function onLogoBackdropChange(isChecked) {
+    state.customize.logoBackdrop = isChecked;
+    if (state.customize.logo && state.customize.logo.raw) {
+      try {
+        const effective = await composeLogo(state.customize.logo.raw, isChecked);
+        state.customize.logo.dataUrl = effective;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    scheduleUpdate(true);
+  }
+
+  /* ============================================================
+     COPY ACTIONS
+     ============================================================ */
+
+  async function copyPayload() {
+    if (!currentResult || currentResult.status !== 'ready') return;
+    try {
+      await navigator.clipboard.writeText(currentResult.payload);
+      showToast('Copied to clipboard.');
+    } catch (e) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = currentResult.payload;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('Copied to clipboard.');
+      } catch (e2) {
+        showToast('Could not copy. Try selecting the text manually.', 'error');
+      }
+    }
+  }
+
+  async function copyImage() {
+    if (!qrCode) return;
+    try {
+      const blob = await qrCode.getRawData('png');
+      if (!blob) throw new Error('No image data.');
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      showToast('Image copied to clipboard.');
+    } catch (e) {
+      console.error(e);
+      showToast('Could not copy the image. Try downloading instead.', 'error');
+    }
+  }
+
+  /* ============================================================
+     DOWNLOADS
+     ============================================================ */
+
+  function buildFileName() {
+    return `qr-studio-${state.type}-${Date.now()}`;
+  }
+
+  async function downloadAsPdf() {
+    if (!window.jspdf || !window.jspdf.jsPDF) throw new Error('PDF library unavailable.');
+    const blob = await qrCode.getRawData('png');
+    const dataUrl = await blobToDataUrl(blob);
+    const size = state.customize.size;
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'px', format: [size, size], compress: true });
+    pdf.addImage(dataUrl, 'PNG', 0, 0, size, size);
+    pdf.save(buildFileName() + '.pdf');
+  }
+
+  async function handleDownload(format) {
+    if (!qrCode || !currentResult || currentResult.status !== 'ready') return;
+    try {
+      if (format === 'pdf') {
+        await downloadAsPdf();
+      } else {
+        await qrCode.download({ name: buildFileName(), extension: format });
+      }
+      showToast(`${format.toUpperCase()} downloaded.`);
+      await maybeAutoSaveHistory();
+    } catch (err) {
+      console.error(err);
+      showToast('Download failed. Please try again.', 'error');
+    }
+  }
+
+  /* ============================================================
+     CONFIGURATION IMPORT / EXPORT
+     ============================================================ */
+
+  function exportConfig() {
+    const config = {
+      version: 1,
+      type: state.type,
+      fields: collectFieldsForType(state.type),
+      customize: state.customize
+    };
+    try {
+      const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'qr-studio-config.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast('Configuration exported.');
+    } catch (e) {
+      console.error(e);
+      showToast('Could not export configuration.', 'error');
+    }
+  }
+
+  async function handleImportConfig(e) {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const data = JSON.parse(text);
+      if (!data || typeof data !== 'object' || !TYPE_LABELS[data.type]) {
+        throw new Error('Invalid configuration file.');
+      }
+      restoreStateFromEntry({
+        type: data.type,
+        fields: data.fields && typeof data.fields === 'object' ? data.fields : {},
+        customize: data.customize && typeof data.customize === 'object' ? data.customize : {}
+      });
+      showToast('Configuration imported.');
+    } catch (err) {
+      console.error(err);
+      showToast("That file isn't a valid QR Studio configuration.", 'error');
+    }
+  }
+
+  /* ============================================================
+     THEME
+     ============================================================ */
+
+  function applyTheme(pref) {
+    state.themePref = pref;
+    const effective = pref === 'system'
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : pref;
+    document.documentElement.setAttribute('data-theme', effective);
+    els.themeIconLight.hidden = pref !== 'light';
+    els.themeIconDark.hidden = pref !== 'dark';
+    els.themeIconAuto.hidden = pref !== 'system';
+    els.themeToggle.setAttribute('aria-label', `Switch theme, currently ${pref}`);
+    try { localStorage.setItem(THEME_KEY, pref); } catch (e) { /* ignore */ }
+  }
+
+  /* ============================================================
+     VIEW ROUTING
+     ============================================================ */
+
+  function setView(view) {
+    if (!['generator', 'history', 'about'].includes(view)) view = 'generator';
+    $all('.view').forEach((v) => { v.hidden = v.dataset.viewPanel !== view; });
+    $all('.nav-link, .mobile-nav-link').forEach((b) => {
+      b.classList.toggle('is-active', b.dataset.view === view);
+    });
+    history.replaceState(null, '', '#' + view);
+    window.scrollTo({ top: 0 });
+    if (view === 'history') renderHistory();
+    closeMobileNav();
+  }
+
+  function openMobileNav() {
+    els.mobileNav.hidden = false;
+    els.mobileNav.classList.add('is-open');
+    els.mobileNavToggle.setAttribute('aria-expanded', 'true');
+    els.mobileNavToggle.setAttribute('aria-label', 'Close menu');
+  }
+  function closeMobileNav() {
+    els.mobileNav.hidden = true;
+    els.mobileNav.classList.remove('is-open');
+    els.mobileNavToggle.setAttribute('aria-expanded', 'false');
+    els.mobileNavToggle.setAttribute('aria-label', 'Open menu');
+  }
+
+  /* ============================================================
+     WIRING
+     ============================================================ */
+
+  function wireNav() {
+    document.addEventListener('click', (e) => {
+      const viewBtn = e.target.closest('[data-view]');
+      if (!viewBtn) return;
+      e.preventDefault();
+      setView(viewBtn.dataset.view);
+      if (viewBtn.dataset.scrollTo) {
+        requestAnimationFrame(() => {
+          const target = document.getElementById(viewBtn.dataset.scrollTo);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    });
+    els.mobileNavToggle.addEventListener('click', () => {
+      if (els.mobileNav.hidden) openMobileNav(); else closeMobileNav();
+    });
+    els.themeToggle.addEventListener('click', () => {
+      const order = ['light', 'dark', 'system'];
+      applyTheme(order[(order.indexOf(state.themePref) + 1) % order.length]);
+    });
+  }
+
+  function wireTypeGrid() {
+    els.typeGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.type-btn');
+      if (btn) selectType(btn.dataset.type);
+    });
+    els.typeGrid.addEventListener('keydown', (e) => {
+      const keys = ['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+      if (!keys.includes(e.key)) return;
+      e.preventDefault();
+      const btns = $all('.type-btn', els.typeGrid);
+      let idx = btns.findIndex((b) => b.dataset.type === state.type);
+      if (e.key === 'Home') idx = 0;
+      else if (e.key === 'End') idx = btns.length - 1;
+      else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') idx = (idx + 1) % btns.length;
+      else idx = (idx - 1 + btns.length) % btns.length;
+      btns[idx].focus();
+      selectType(btns[idx].dataset.type);
+    });
+  }
+
+  function wireContentForm() {
+    els.contentForm.addEventListener('input', () => scheduleUpdate(false));
+    els.contentForm.addEventListener('change', () => scheduleUpdate(true));
+    els.wifiPasswordToggle.addEventListener('click', () => {
+      const input = document.getElementById('wifi-password');
+      const showing = input.type === 'text';
+      input.type = showing ? 'password' : 'text';
+      els.wifiPasswordToggle.setAttribute('aria-pressed', showing ? 'false' : 'true');
+      els.wifiPasswordToggle.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+    });
+  }
+
+  function wireCustomize() {
+    els.fgColor.addEventListener('input', () => {
+      els.fgColorHex.value = els.fgColor.value.toUpperCase();
+      state.customize.fg = els.fgColor.value;
+      scheduleUpdate(false);
+    });
+    els.fgColorHex.addEventListener('input', () => {
+      const v = els.fgColorHex.value.trim();
+      const withHash = v.startsWith('#') ? v : '#' + v;
+      if (/^#[0-9A-Fa-f]{6}$/.test(withHash)) {
+        els.fgColor.value = withHash;
+        state.customize.fg = withHash;
+        scheduleUpdate(false);
+      }
+    });
+    els.bgColor.addEventListener('input', () => {
+      els.bgColorHex.value = els.bgColor.value.toUpperCase();
+      state.customize.bg = els.bgColor.value;
+      scheduleUpdate(false);
+    });
+    els.bgColorHex.addEventListener('input', () => {
+      const v = els.bgColorHex.value.trim();
+      const withHash = v.startsWith('#') ? v : '#' + v;
+      if (/^#[0-9A-Fa-f]{6}$/.test(withHash)) {
+        els.bgColor.value = withHash;
+        state.customize.bg = withHash;
+        scheduleUpdate(false);
+      }
+    });
+    els.bgTransparent.addEventListener('change', () => {
+      state.customize.bgTransparent = els.bgTransparent.checked;
+      scheduleUpdate(true);
+    });
+
+    wireSegmented(els.patternGroup, (v) => { state.customize.pattern = v; scheduleUpdate(true); });
+    wireSegmented(els.eyeGroup, (v) => { state.customize.eyeStyle = v; scheduleUpdate(true); });
+    wireSegmented(els.ecGroup, (v) => { state.customize.ecLevel = v; state.customize.ecAutoBumped = false; scheduleUpdate(true); });
+    wireSegmented(els.frameGroup, (v) => {
+      state.customize.frameStyle = v;
+      els.frameCustomWrap.hidden = v !== 'custom';
+      scheduleUpdate(true);
+    });
+
+    els.qrSize.addEventListener('change', () => { state.customize.size = Number(els.qrSize.value); scheduleUpdate(true); });
+    els.qrMargin.addEventListener('change', () => { state.customize.marginPercent = Number(els.qrMargin.value); scheduleUpdate(true); });
+
+    els.logoUploadBtn.addEventListener('click', () => els.logoInput.click());
+    els.logoInput.addEventListener('change', onLogoFile);
+    els.logoRemoveBtn.addEventListener('click', onLogoRemove);
+    els.logoSize.addEventListener('input', () => { state.customize.logoSizeRatio = Number(els.logoSize.value); scheduleUpdate(false); });
+    els.logoMargin.addEventListener('input', () => { state.customize.logoMarginPercent = Number(els.logoMargin.value); scheduleUpdate(false); });
+    els.logoBackdrop.addEventListener('change', () => onLogoBackdropChange(els.logoBackdrop.checked));
+
+    els.frameCustomText.addEventListener('input', () => {
+      state.customize.frameText = els.frameCustomText.value;
+      scheduleUpdate(false);
+    });
+    $all('.chip[data-preset]').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        els.frameCustomText.value = chip.dataset.preset;
+        state.customize.frameText = chip.dataset.preset;
+        scheduleUpdate(true);
+      });
+    });
+  }
+
+  function wirePreviewActions() {
+    els.resetBtn.addEventListener('click', () => {
+      els.contentForm.reset();
+      clearAllFieldErrors();
+      scheduleUpdate(true);
+      showToast('Reset complete.');
+    });
+    els.saveHistoryBtn.addEventListener('click', saveToHistory);
+    els.copyPayloadBtn.addEventListener('click', copyPayload);
+    if (els.copyImageBtn) els.copyImageBtn.addEventListener('click', copyImage);
+    els.excludeFromHistory.addEventListener('change', () => {
+      state.excludeFromHistory = els.excludeFromHistory.checked;
+      state.excludeFromHistoryUserSet = true;
+    });
+    $all('.download-buttons .btn').forEach((btn) => {
+      btn.addEventListener('click', () => handleDownload(btn.dataset.format));
+    });
+  }
+
+  function wireHistoryView() {
+    wireSegmented(els.historyFilter, (v) => { state.historyFilter = v; renderHistory(); });
+    els.clearHistoryBtn.addEventListener('click', clearAllHistory);
+    els.historyList.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const card = e.target.closest('.history-card');
+      const id = card && card.dataset.id;
+      if (!id) return;
+      const action = btn.dataset.action;
+      if (action === 'favorite') toggleFavorite(id);
+      else if (action === 'delete') deleteHistoryEntry(id);
+      else if (action === 'reopen') reopenHistoryEntry(id);
+      else if (action === 'duplicate') duplicateHistoryEntry(id);
+    });
+  }
+
+  function wireImportExport() {
+    els.exportConfigBtn.addEventListener('click', exportConfig);
+    els.importConfigBtn.addEventListener('click', () => els.importConfigFile.click());
+    els.importConfigFile.addEventListener('change', handleImportConfig);
+  }
+
+
+  /* ============================================================
+     INIT
+     ============================================================ */
+
+  function cacheEls() {
+    const ids = [
+      'themeToggle', 'themeIconLight', 'themeIconDark', 'themeIconAuto',
+      'mobileNavToggle', 'mobileNav', 'typeGrid', 'contentForm',
+      'wifiPasswordToggle', 'fgColor', 'fgColorHex', 'bgColor', 'bgColorHex', 'bgTransparent',
+      'patternGroup', 'eyeGroup', 'ecGroup', 'frameGroup', 'qrSize', 'qrMargin',
+      'logoPreview', 'logoUploadBtn', 'logoRemoveBtn', 'logoInput', 'logoControls',
+      'logoSize', 'logoMargin', 'logoBackdrop', 'frameCustomWrap', 'frameCustomText',
+      'previewFrame', 'qrCanvasWrap', 'frameCaption', 'previewTypeLabel', 'previewContentPreview',
+      'scanWarning', 'resetBtn', 'saveHistoryBtn', 'copyPayloadBtn', 'copyImageBtn',
+      'excludeFromHistory', 'exportConfigBtn', 'importConfigBtn', 'importConfigFile',
+      'historyFilter', 'clearHistoryBtn', 'historyList', 'historyEmpty', 'favoritesEmpty',
+      'toastRegion'
+    ];
+    ids.forEach((id) => { els[id] = document.getElementById(id); });
+    els.historyItemTemplate = document.getElementById('historyItemTemplate');
+  }
+
+  function init() {
+    cacheEls();
+    defaultLogoIconHtml = els.logoPreview.innerHTML;
+    historyItems = loadHistory();
+
+    let savedTheme = 'system';
+    try { savedTheme = localStorage.getItem(THEME_KEY) || 'system'; } catch (e) { /* ignore */ }
+    applyTheme(savedTheme);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (state.themePref === 'system') applyTheme('system');
+    });
+
+    const canCopyImage = !!(navigator.clipboard && window.ClipboardItem);
+    if (canCopyImage && els.copyImageBtn) els.copyImageBtn.hidden = false;
+
+    wireNav();
+    wireTypeGrid();
+    wireContentForm();
+    wireCustomize();
+    wirePreviewActions();
+    wireHistoryView();
+    wireImportExport();
+
+    const initialView = (location.hash || '').replace('#', '') || 'generator';
+    setView(initialView);
+    renderHistory();
+    scheduleUpdate(true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+
+</script>
+</body>
+</html>
