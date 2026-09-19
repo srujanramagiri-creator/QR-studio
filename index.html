@@ -5,44 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>QR Studio — Create. Customize. Download.</title>
 <meta name="description" content="A free, private, browser-based QR code generator. Design, style, and download scannable QR codes for links, Wi-Fi, payments, contacts, events and more — no account, no server, no tracking.">
-<meta name="theme-color" content="#14161B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect x='1' y='1' width='24' height='24' rx='5' fill='%2314161B'/%3E%3Crect x='7.5' y='7.5' width='11' height='11' rx='2' stroke='%23F6F5F2' stroke-width='2' fill='none'/%3E%3Crect x='11' y='11' width='4' height='4' fill='%231F6F54'/%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA20lEQVR4nGNkwAJExKT/YxOnFLx59ZQRXQxFgFYW43MIE70tR7eLEZvlj+5fp5nlcoqacPabV08ZmdAV0NJybOYzIvseJonsSlo5AGYHRgjQG4w6gIVYheQkTmLSElEhQG7OIEYf0SHAwEBa7iDW0UMnDSAD7khLrOJflx8n2awBD4FRB4w6gKxcQE5qxwUGPAQG3AEkRQEtWktEhQC5LSRi9BEdArRqpg14Ghh4B2DrLtELvHn1lBGjY0LrfgEDAyQ9wTzOBHMJsiStLUcGdO+cokc51vinZ/ccADCYSqlBE/WDAAAAAElFTkSuQmCC">
-<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhUlEQVR4nGNkgAIRMen/DESCN6+eMsLYjKRqRjeIEVnzo/vXidYsp6jJwMDAwMBEjmZk9Sy4TCZGM1YDCLkG3QKsBjAwMDBoViWh8K+3zcOqjgmrKAlg4A3AGQa4/EyRC7BFMVYXEJMWYACeF0hNiQwMDAxc3HyMcC+QYiuyeni2JDc7AwDd4yY1VEGXfgAAAABJRU5ErkJggg==">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEq0lEQVR4nO3cMU4jSRiG4fJosk0RCRISIUfYo+wJ9yh7BEIkJBJEujEbrDzygLHd7e6q6q+e5wB2t+vlp1yyvSuduLm9+2h9Dcz3/va6a30NpZTS5CLEm69V4NWeVMTjqhn36k8kZA6tHfdqDy5kTlkr7MUfVMhMsXTYiz2YkJlryagXeSAxs4Qlwv5x7QOImaUs0dLsvwghs6a503rWhBYza5vb2OSgxUwtc1qbFLSYqW1qcxcHLWZamdLeRUGLmdYubfDqYzvoydmgTWd6cUmLJ4MWM7051+S3QYuZXp1q0x6aKEeDNp3p3XeNmtBE+RK06cxWHGvVhCbKb0GbzmzN52Z/trqQc16en1pfAmfcPzy2voQvfn2IuofpLOLtah33/gsBXUxoIW/ffg1bh938TaGYs7Rez10pbbYbrW+cdbWY1O9vr7smE1rM+VqtcfMtB7laRF09aNN5LLXXu+opx9Sba/2Ome9NWcuX56dqa/mzh/Pnz4Tcv/0a9fQf9+b27mNXK+hLblzI29XL+npTSJRugjadt62X9asSdE/7LNqp0UEXE7qXv26u08M6dhE0LEXQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNlC5+rLGmEb8908MH72sZakKPGHMpY933MEGPtKjHjHL/QwQ9ymKeM8LrEB/0CIs4RfrrER80YxE0UQRNlOHOoT9LPKNN3yefYkITRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNlOE/nDTHH3/9WeV5/v37nyrPk8SEJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJopfTprBLxr1y4QmiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImyvCftnt5fmp9CSzIhCaKoIki6MHcPzy2voRVxQedvoD8Lj7oUkS9N8LrMETQpYyxmKeMcv/DBF3KOIt66P7hcaj7Hu4ceqTFHdFQE5p8giaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKJ0EbQfe8nQwzpWCdq3RCilTgddTOhS+vjrZr5e1q+boNmuXmIupZRdKaXc3N591HiyS2/cFmU7elrT97fXXZff+t6/SMLuV09T+VDVCV1Kvy8E66k1mN7fXnfV99Cm7lhqr/ePUv4vu+aTinoMNdd533CzUw5RZ2u1vk2P7USdqeW6/gq69rZjT9RZWqznYbtdHNvtXwQnINvVy2DqIui9wxdF3P3rJeJDX7YZNc+k4Vqft8o+y0GUL0G3enMIUx1r1YQmytGgTWl6912j305oUdOrU23achDlZNCmNL051+TZCS1qenFJi7YcbMKlg/WioE1ptuLiCS1qWpnS3qQth6ipbWpzk/fQoqaWOa3NjtOn8ljLNUPz6mkrbJZ07Q7g6mM7WxCWskRLi8VoUjPXkkNx8ekqbKZY+j/8atsFYXPKWlvV1fe/wubQ2u+5qr2hE/a4ah4cNDmhEHe+Vqdf3Ry5iXzbejm+/Q9MVkjhqkOoygAAAABJRU5ErkJggg==">
+<meta name="theme-color" content="#2B1720">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect x='1' y='1' width='24' height='24' rx='5' fill='%232B1720'/%3E%3Crect x='7.5' y='7.5' width='11' height='11' rx='2' stroke='%23FFF3F6' stroke-width='2' fill='none'/%3E%3Crect x='11' y='11' width='4' height='4' fill='%23E8759E'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA20lEQVR4nGNkwAK0xRX+YxOnFFx9+YARXQxFgFYW43MIE70tR7eLEZvlV+5co5nlOipacPbVlw8YmdAV0NJybOYzIvseJonsSlo5AGYHRgjQG4w6gIVYheQkTmLSElEhQG7OIEYf0SHAwEBa7iDW0UMnDSCDvXF1WMWdFzWRbNaAh8CoA0YdQFYuICe14wIDHgID7gCSooAWrSWiQoDcFhIx+ogOAVo10wY8DQy8A7B1l+gFrr58wIjRMaF1v4CBAZKeYB5ngrkEWZLWliMDundO0aMca/zTs3sOALcWSa2P75c4AAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhUlEQVR4nGNkgAJtcYX/DESCqy8fMMLYjKRqRjeIEVnzlTvXiNaso6LFwMDAwMBEjmZk9Sy4TCZGM1YDCLkG3QKsBjAwMDC8bFqBwhevi8CqjgmrKAlg4A3AGQa4/EyRC7BFMVYXEJMWYACeF0hNiQwMDAyMvFyMcC+QYiuyeni2JDc7AwCloCVohz5ragAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEqklEQVR4nO3cwVEjRxiG4dbW5sCVAycgC+fhUHxwKM7DWQAnDlyJAh9c2tKCkDSjme6er58nAGlG/fLT6pK0K514uLn9aH0NzPf8/rZrfQ2llNLkIsSbr1Xg1Z5UxOOqGffqTyRkDq0d92oPLmROWSvsxR9UyEyxdNiLPZiQmWvJqBd5IDGzhCXC/nHtA4iZpSzR0uy/CCGzprnTetaEFjNrm9vY5KDFTC1zWpsUtJipbWpzFwctZlqZ0t5FQYuZ1i5t8OpjO+jJ2aBNZ3pxSYsngxYzvTnX5LdBi5lenWrTHpooR4M2nendd42a0ET5ErTpzFYca9WEJspvQZvObM3nZn+2upBznl5fWl8CZzze3be+hC9+fYi6h+ks4u1qHff+CwFdTGghb99+DVuH3fxNoZiztF7PXSltthutb5x1tZjUz+9vuyYTWsz5Wq1x8y0HuVpEXT1o03kstde76inH1Jtr/Y6Z701Zy6fXl2pr+bOH8+fPhNy//Rr19B/34eb2Y1cr6EtuXMjb1cv6elNIlG6CNp23rZf1qxJ0T/ss2qnRQRcTupe/bq7Twzp2ETQsRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE2ULn6ssaYRvz3TwwfvaxlqQo8Ycylj3fcwQY+0qMeMcv9DBD3KYp4zwusQH/QIizhF+usRHzRjETRRBE2U4c6hP0s8o03fJ59iQhNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE2U4T+cNMe/f/5V5Xn++OfvKs+TxIQmiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImil9OmsEvGvXLhCaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogibK8J+2e3p9aX0JLMiEJoqgiSLowTze3be+hFXFB52+gPwuPuhSRL03wuswRNCljLGYp4xy/8MEXco4i3ro8e5+qPse7hx6pMUd0VATmnyCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoonQRtB97ydDDOlYJ2rdEKKVOB11M6FL6+Otmvl7Wr5ug2a5eYi6llF0ppTzc3H7UeLJLb9wWZTt6WtPn97ddl9/63r9Iwu5XT1P5UNUJXUq/LwTrqTWYnt/fdtX30KbuWGqv949S/i+75pOKegw113nfcLNTDlFna7W+TY/tRJ2p5br+Crr2tmNP1FlarOdhu10c2+1fBCcg29XLYOoi6L3DF0Xc/esl4kNfthk1z6ThWp+3yj7LQZQvQbd6cwhTHWvVhCbK0aBNaXr3XaPfTmhR06tTbdpyEOVk0KY0vTnX5NkJLWp6cUmLthxswqWD9aKgTWm24uIJLWpamdLepC2HqKltanOT99CippY5rc2O06fyWMs1Q/PqaStslnTtDuDqYztbEJayREuLxWhSM9eSQ3Hx6Spsplj6P/xq2wVhc8paW9XV97/C5tDa77mqvaET9rhqHhw0OaEQd75Wp1/dHLmJfNt6Ob79Dw5BSHLyzTHzAAAAAElFTkSuQmCC">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
    QR STUDIO — Design System
-   Ink/Paper monochrome UI with a single reserved accent.
+   Baby pink theme: soft blush surfaces, warm plum ink, rose accent.
    ============================================================ */
 
 :root {
   /* --- Color: light --- */
-  --ink: #14161B;
-  --ink-soft: #4A4D55;
-  --paper: #F6F5F2;
+  --ink: #2B1720;
+  --ink-soft: #6E4A56;
+  --paper: #FFF3F6;
   --surface: #FFFFFF;
-  --surface-sunken: #EFEEEA;
-  --line: #E3E1DA;
-  --line-strong: #CFCDC4;
-  --accent: #1F6F54;
-  --accent-ink: #0F4536;
-  --accent-tint: #E6F1EC;
+  --surface-sunken: #FDE9EF;
+  --line: #F6DAE3;
+  --line-strong: #EFC0D2;
+  --accent: #E8759E;
+  --accent-ink: #A63764;
+  --accent-tint: #FCE3EC;
   --warn: #B8802E;
-  --warn-tint: #FBF1E1;
+  --warn-tint: #FCF3E5;
   --error: #C1442F;
-  --error-tint: #FBEAE6;
-  --focus-ring: #1F6F54;
+  --error-tint: #FCECE8;
+  --focus-ring: #E8759E;
 
   /* --- Type --- */
-  --font-display: 'Space Grotesk', 'Inter', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* --- Scale --- */
   --step-0: 0.9375rem;
@@ -56,29 +57,30 @@
   --r-sm: 6px;
   --r-md: 10px;
   --r-lg: 16px;
-  --shadow-card: 0 1px 2px rgba(20,22,27,0.04), 0 8px 24px -12px rgba(20,22,27,0.12);
-  --shadow-pop: 0 4px 10px rgba(20,22,27,0.08), 0 16px 40px -16px rgba(20,22,27,0.22);
+  --shadow-card: 0 1px 2px rgba(25,28,34,0.03), 0 10px 28px -16px rgba(25,28,34,0.10);
+  --shadow-pop: 0 4px 12px rgba(25,28,34,0.06), 0 22px 50px -18px rgba(25,28,34,0.16);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --header-h: 64px;
 }
 
 [data-theme="dark"] {
-  --ink: #F2F1ED;
-  --ink-soft: #A7A9AE;
-  --paper: #101214;
-  --surface: #17191D;
-  --surface-sunken: #1D1F23;
-  --line: #2A2D32;
-  --line-strong: #3A3D43;
-  --accent: #3FA07E;
-  --accent-ink: #BEEBD8;
-  --accent-tint: #16261F;
+  --ink: #FBEAF0;
+  --ink-soft: #C9A0AF;
+  --paper: #1C1216;
+  --surface: #26181E;
+  --surface-sunken: #2E1D24;
+  --line: #3E2731;
+  --line-strong: #52323F;
+  --accent: #F294B7;
+  --accent-ink: #FBD3E1;
+  --accent-tint: #3A2029;
   --warn: #D9A75B;
   --warn-tint: #2A2213;
   --error: #E17A67;
   --error-tint: #2A1714;
-  --focus-ring: #3FA07E;
+  --focus-ring: #F294B7;
   --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
   --shadow-pop: 0 4px 10px rgba(0,0,0,0.35), 0 16px 40px -16px rgba(0,0,0,0.6);
 }
@@ -182,15 +184,23 @@ a { color: inherit; }
 }
 .btn:active { transform: translateY(1px); }
 .btn-primary { background: var(--ink); color: var(--paper); }
-.btn-primary:hover { background: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); box-shadow: var(--shadow-card); }
 [data-theme="dark"] .btn-primary:hover { background: var(--accent); color: var(--ink); }
 .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent-ink); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-1px); box-shadow: var(--shadow-card); }
 [data-theme="dark"] .btn-secondary:hover { color: var(--accent); }
 .btn-ghost { background: transparent; color: var(--ink-soft); }
 .btn-ghost:hover { color: var(--ink); background: var(--surface-sunken); }
 .btn-sm { padding: 8px 14px; font-size: 0.84rem; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+.generate-cta {
+  display: none;
+  align-items: center; justify-content: center; gap: 9px;
+  width: 100%; padding: 15px 18px;
+  font-size: 0.98rem;
+  box-shadow: var(--shadow-card);
+}
 
 .chip {
   padding: 7px 12px;
@@ -295,34 +305,46 @@ a { color: inherit; }
 
 /* ============ MAIN / VIEWS ============ */
 #main { max-width: 1240px; margin: 0 auto; padding: 0 24px 80px; }
+@keyframes viewEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.view-enter { animation: viewEnter 0.45s var(--ease) both; }
 .view-header { padding: 40px 0 28px; }
-.view-header h1 { font-family: var(--font-display); font-size: var(--step-3); font-weight: 600; letter-spacing: -0.015em; }
+.view-header h1 { font-family: var(--font-serif); font-size: var(--step-4); font-weight: 600; letter-spacing: -0.008em; color: var(--ink); }
 .view-sub { color: var(--ink-soft); margin-top: 6px; font-size: 0.95rem; }
 
 /* ============ INTRO (compact hero) ============ */
 .intro {
-  max-width: 640px;
-  padding: 52px 0 34px;
-  animation: rise 0.6s var(--ease) both;
+  max-width: 720px;
+  padding: 60px 0 36px;
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .intro-title {
-  font-family: var(--font-display);
-  font-size: var(--step-4);
+  font-family: var(--font-serif);
+  font-size: var(--step-5);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
   color: var(--ink);
+  animation: rise 0.6s var(--ease) both;
 }
+.intro-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-ink);
+}
+[data-theme="dark"] .intro-title em { color: var(--accent); }
 .intro-lede {
   margin-top: 14px;
   font-size: 1.02rem;
   color: var(--ink-soft);
   line-height: 1.6;
   max-width: 54ch;
+  animation: rise 0.6s 0.07s var(--ease) both;
 }
 .intro-privacy {
   margin-top: 16px;
@@ -330,10 +352,12 @@ a { color: inherit; }
   font-size: 0.83rem; color: var(--accent-ink);
   background: var(--accent-tint);
   padding: 7px 12px; border-radius: 999px;
-  transition: background-color 0.15s var(--ease);
+  transition: background-color 0.15s var(--ease), transform 0.15s var(--ease);
+  animation: rise 0.6s 0.14s var(--ease) both;
 }
 .intro-privacy:hover, .intro-privacy:focus-visible {
   background: color-mix(in srgb, var(--accent-tint) 55%, var(--accent) 20%);
+  transform: translateY(-1px);
 }
 [data-theme="dark"] .intro-privacy { color: var(--accent); }
 
@@ -344,7 +368,7 @@ a { color: inherit; }
   gap: 20px;
   align-items: start;
   padding-bottom: 20px;
-  animation: rise 0.6s 0.08s var(--ease) both;
+  animation: rise 0.6s 0.2s var(--ease) both;
 }
 .app-controls { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 .app-preview {
@@ -366,10 +390,12 @@ a { color: inherit; }
   color: var(--ink-soft);
   font-size: 0.74rem;
   font-weight: 600;
-  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease), transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
-.type-btn svg { width: 20px; height: 20px; }
-.type-btn:hover { border-color: var(--line-strong); color: var(--ink); }
+.type-btn svg { width: 20px; height: 20px; transition: transform 0.2s var(--ease-spring); }
+.type-btn:hover { border-color: var(--line-strong); color: var(--ink); transform: translateY(-1px); box-shadow: var(--shadow-card); }
+.type-btn:hover svg { transform: scale(1.08); }
+.type-btn:active { transform: translateY(0) scale(0.97); }
 .type-btn.is-active {
   border-color: var(--accent);
   color: var(--accent-ink);
@@ -443,19 +469,30 @@ a { color: inherit; }
 
 /* ============ SEGMENTED CONTROL ============ */
 .segmented {
-  display: inline-flex; flex-wrap: wrap; gap: 6px;
+  display: inline-flex; flex-wrap: wrap; gap: 6px; position: relative;
+}
+.segmented-indicator {
+  position: absolute; top: 0; left: 0; width: 0; height: 0;
+  background: var(--accent-tint);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--r-sm);
+  transition: transform 0.28s var(--ease), width 0.28s var(--ease), height 0.28s var(--ease);
+  pointer-events: none;
+  z-index: 0;
 }
 .segmented-btn {
+  position: relative; z-index: 1;
   padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
   font-size: 0.83rem; font-weight: 600;
   color: var(--ink-soft);
-  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+  transition: border-color 0.15s var(--ease), color 0.2s var(--ease), transform 0.12s var(--ease);
 }
 .segmented-btn:hover { border-color: var(--line-strong); color: var(--ink); }
+.segmented-btn:active { transform: scale(0.96); }
 .segmented-btn.is-active {
-  border-color: var(--accent); color: var(--accent-ink); background: var(--accent-tint);
+  border-color: transparent; color: var(--accent-ink);
 }
 [data-theme="dark"] .segmented-btn.is-active { color: var(--accent); }
 
@@ -530,6 +567,11 @@ a { color: inherit; }
   overflow: hidden;
 }
 .qr-render canvas, .qr-render svg { max-width: 100%; height: auto; border-radius: 4px; }
+@keyframes qrAppear {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.qr-render.is-fresh { animation: qrAppear 0.5s var(--ease-spring) both; }
 .qr-placeholder {
   width: 100%; height: 100%; min-height: 200px;
   display: flex; align-items: center; justify-content: center;
@@ -585,7 +627,10 @@ a { color: inherit; }
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--r-lg); padding: 14px;
   box-shadow: var(--shadow-card);
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), border-color 0.18s var(--ease);
+  animation: rise 0.4s var(--ease) both;
 }
+.history-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-pop); border-color: var(--line-strong); }
 .history-thumb {
   width: 64px; height: 64px; flex-shrink: 0;
   border-radius: var(--r-sm); overflow: hidden;
@@ -659,6 +704,14 @@ a { color: inherit; }
   background: var(--surface-sunken); padding: 1px 6px; border-radius: 4px;
 }
 
+/* ============ SCROLL REVEAL ============ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+[data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
+
 .faq { max-width: 720px; }
 .faq-item {
   border-bottom: 1px solid var(--line);
@@ -723,8 +776,9 @@ a { color: inherit; }
 
 @media (max-width: 980px) {
   .app-shell { grid-template-columns: 1fr; }
-  .app-preview { position: static; order: -1; }
-  .intro-title { font-size: var(--step-3); }
+  .app-preview { position: static; }
+  .generate-cta { display: flex; }
+  .intro-title { font-size: var(--step-4); }
 }
 
 @media (max-width: 720px) {
@@ -801,7 +855,7 @@ a { color: inherit; }
   <!-- ============ GENERATOR VIEW ============ -->
   <section id="view-generator" class="view" data-view-panel="generator">
     <div class="intro">
-      <h1 class="intro-title">Create a QR code that actually looks designed.</h1>
+      <h1 class="intro-title">Create a QR code that actually looks <em>designed</em>.</h1>
       <p class="intro-lede">Pick a type, enter your content, and watch it appear instantly. Style the colors, shape, and logo, then export it print-ready — entirely in your browser.</p>
       <button type="button" class="intro-privacy" data-view="about" data-scroll-to="privacy">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4 5.8v6c0 5 3.4 8.9 8 10.2 4.6-1.3 8-5.2 8-10.2v-6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2.1 2.1L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1240,11 +1294,16 @@ a { color: inherit; }
           </div>
 
         </section>
+
+        <button type="button" class="btn btn-primary generate-cta" id="generateCtaBtn">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="11" y="2.5" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="2.5" y="11" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="12.5" y="12.5" width="2.5" height="2.5" fill="currentColor"/></svg>
+          Generate QR Code
+        </button>
       </div>
 
       <!-- ---------- PREVIEW ---------- -->
       <div class="app-preview">
-        <section class="panel preview-card" aria-labelledby="preview-heading">
+        <section class="panel preview-card" id="previewCard" aria-labelledby="preview-heading">
           <h2 id="preview-heading" class="sr-only">Preview</h2>
 
           <div class="preview-stage">
@@ -1357,7 +1416,7 @@ a { color: inherit; }
 
       <p>QR Studio is built so that using it doesn't require trusting anyone with your data. This page explains exactly what happens — and just as importantly, what doesn't.</p>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>The short version</h3>
         <ul class="policy-list">
           <li>QR codes are generated entirely inside your browser. Whatever you type — a Wi-Fi password, a UPI ID, a phone number — is never sent to a server, because no server is involved in generating your code.</li>
@@ -1367,38 +1426,38 @@ a { color: inherit; }
         </ul>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>What's stored, and where</h3>
         <p>When you save a QR code to History, or change a setting like your theme preference, that information is written to your browser's <code>localStorage</code> — a storage area built into the browser itself, scoped to this page, and never transmitted anywhere. It stays on your device until you delete it, either with the "Clear all" button in History or by clearing this site's data in your browser settings. It won't follow you to another browser or device, because it was never sent anywhere to begin with.</p>
         <p>For QR types that can carry sensitive information — Wi-Fi passwords, contact details, UPI payment requests — QR Studio defaults "Don't save this QR to history" to on, so nothing is retained on-device unless you choose to keep it.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Third-party resources</h3>
         <p>This page loads a font library (Google Fonts) and two open-source code libraries used to draw and export QR codes (served from unpkg and cdnjs), so it doesn't have to ship everything itself. Loading any resource from the web means the provider serving it sees standard technical request information, like your IP address and browser type — that's true of any site using a CDN or web font, not something specific to QR Studio. None of these providers ever receive anything you type into the generator; that content never leaves your browser.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Clipboard access</h3>
         <p>The "Copy data" and "Copy image" buttons only touch your clipboard when you explicitly click them, to place the QR content or image there. QR Studio never reads your clipboard at any other time.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Cookies and tracking</h3>
         <p>QR Studio does not use cookies, does not run analytics, and does not include any advertising or tracking scripts.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Children's privacy</h3>
         <p>QR Studio doesn't knowingly collect data from anyone, of any age — it doesn't collect data at all. Everything described above stays on your own device, regardless of who's using it.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Changes to this policy</h3>
         <p>If how QR Studio works ever changes in a way that affects your privacy, this page will be updated along with the "Last updated" date above.</p>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" data-reveal>
         <h3>Questions</h3>
         <p>Reach out to <a href="mailto:hello@hanumandigitalstudio.com">hello@hanumandigitalstudio.com</a> with any privacy questions.</p>
       </div>
@@ -1407,31 +1466,31 @@ a { color: inherit; }
     <div class="faq" id="faq" aria-labelledby="faq-heading">
       <h2 id="faq-heading" class="panel-title">Frequently asked questions</h2>
 
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Are QR codes free to generate?</summary>
         <p>Yes. Every feature in QR Studio — styling, logos, all export formats — is free, with no limits or watermarks.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Do I need an account?</summary>
         <p>No. Open the page and start generating. Nothing is tied to an identity or a login.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Does QR Studio store my data?</summary>
         <p>Only on your own device, and only if you choose to save a code to History. Nothing is transmitted to a server.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Can I use these QR codes commercially?</summary>
         <p>Yes. The QR codes you generate are standard, unencumbered QR codes — you're free to print and use them for business purposes.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Can I add my own logo?</summary>
         <p>Yes, from the Customize panel. QR Studio automatically increases error correction to help keep the code scannable once a logo is added.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Can I generate UPI QR codes?</summary>
         <p>Yes. QR Studio builds a standard UPI payment-request payload from your UPI ID, name, and optional amount. It only generates the code — it doesn't process or route any payment.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-reveal>
         <summary>Can I print the QR codes I generate?</summary>
         <p>Yes. Export at a higher size (1024px or 2048px) for crisp printing, and keep a comfortable quiet zone around the code so scanners can find it easily.</p>
       </details>
@@ -1587,7 +1646,7 @@ a { color: inherit; }
 
   let qrCode = null;
   let currentResult = { status: 'empty' };
-  let debounceTimer = null;
+  let wasReady = false;
   let historyItems = [];
   let defaultLogoIconHtml = '';
 
@@ -1630,10 +1689,18 @@ a { color: inherit; }
     }
   }
   function debounce(fn, wait) {
-    return function (...args) {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => fn.apply(null, args), wait);
+    let timer = null;
+    const debounced = function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(null, args), wait);
     };
+    debounced.cancel = () => clearTimeout(timer);
+    return debounced;
+  }
+  function scrollToEl(el) {
+    if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
   function readFileAsDataUrl(file) {
     return new Promise((resolve, reject) => {
@@ -2052,6 +2119,8 @@ a { color: inherit; }
 
   function showPlaceholder() {
     els.qrCanvasWrap.innerHTML = '';
+    els.qrCanvasWrap.classList.remove('is-fresh');
+    wasReady = false;
     const ph = document.createElement('div');
     ph.className = 'qr-placeholder';
     ph.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="13" width="8" height="8" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M14.5 14.5h6.5M14.5 18h3.5M18.5 18v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
@@ -2064,6 +2133,7 @@ a { color: inherit; }
     els.copyPayloadBtn.disabled = !enabled;
     els.saveHistoryBtn.disabled = !enabled;
     if (els.copyImageBtn) els.copyImageBtn.disabled = !enabled;
+    if (els.generateCtaBtn) els.generateCtaBtn.disabled = !enabled;
     $all('.download-buttons .btn').forEach((b) => { b.disabled = !enabled; });
   }
 
@@ -2078,6 +2148,10 @@ a { color: inherit; }
       }
       els.qrCanvasWrap.innerHTML = '';
       qrCode.append(els.qrCanvasWrap);
+      if (!wasReady) {
+        els.qrCanvasWrap.classList.add('is-fresh');
+        wasReady = true;
+      }
       updateFrameCaption();
       setDownloadEnabled(true);
     } catch (err) {
@@ -2118,8 +2192,8 @@ a { color: inherit; }
 
   const scheduleUpdateDebounced = debounce(runUpdate, DEBOUNCE_MS);
   function scheduleUpdate(immediate) {
+    scheduleUpdateDebounced.cancel();
     if (immediate) {
-      clearTimeout(debounceTimer);
       runUpdate();
     } else {
       scheduleUpdateDebounced();
@@ -2151,12 +2225,26 @@ a { color: inherit; }
      SEGMENTED CONTROLS
      ============================================================ */
 
+  function positionSegmentedIndicator(container) {
+    const indicator = container.querySelector('.segmented-indicator');
+    const active = container.querySelector('.segmented-btn.is-active');
+    if (!indicator || !active) return;
+    indicator.style.width = active.offsetWidth + 'px';
+    indicator.style.height = active.offsetHeight + 'px';
+    indicator.style.transform = `translate(${active.offsetLeft}px, ${active.offsetTop}px)`;
+  }
+
+  function positionAllSegmentedIndicators() {
+    $all('.segmented').forEach((seg) => positionSegmentedIndicator(seg));
+  }
+
   function setSegmentedActive(container, value) {
-    Array.from(container.children).forEach((b) => {
+    $all('.segmented-btn', container).forEach((b) => {
       const active = b.dataset.value === value;
       b.classList.toggle('is-active', active);
       b.setAttribute('aria-checked', active ? 'true' : 'false');
     });
+    positionSegmentedIndicator(container);
   }
 
   function wireSegmented(container, onChange) {
@@ -2390,10 +2478,11 @@ a { color: inherit; }
     const filter = state.historyFilter;
     const items = filter === 'favorites' ? historyItems.filter((h) => h.favorite) : historyItems;
     els.historyList.innerHTML = '';
-    items.forEach((item) => {
+    items.forEach((item, index) => {
       const node = els.historyItemTemplate.content.cloneNode(true);
       const card = node.querySelector('.history-card');
       card.dataset.id = item.id;
+      card.style.animationDelay = Math.min(index * 0.04, 0.4) + 's';
       const img = node.querySelector('.history-thumb-img');
       img.src = item.thumb || '';
       node.querySelector('.history-type').textContent = TYPE_LABELS[item.type] || item.type;
@@ -2612,7 +2701,15 @@ a { color: inherit; }
 
   function setView(view) {
     if (!['generator', 'history', 'about'].includes(view)) view = 'generator';
-    $all('.view').forEach((v) => { v.hidden = v.dataset.viewPanel !== view; });
+    $all('.view').forEach((v) => {
+      const show = v.dataset.viewPanel === view;
+      v.hidden = !show;
+      if (show) {
+        v.classList.remove('view-enter');
+        void v.offsetWidth; // force reflow so the animation restarts every time
+        v.classList.add('view-enter');
+      }
+    });
     $all('.nav-link, .mobile-nav-link').forEach((b) => {
       b.classList.toggle('is-active', b.dataset.view === view);
     });
@@ -2620,6 +2717,7 @@ a { color: inherit; }
     window.scrollTo({ top: 0 });
     if (view === 'history') renderHistory();
     closeMobileNav();
+    requestAnimationFrame(positionAllSegmentedIndicators);
   }
 
   function openMobileNav() {
@@ -2647,8 +2745,7 @@ a { color: inherit; }
       setView(viewBtn.dataset.view);
       if (viewBtn.dataset.scrollTo) {
         requestAnimationFrame(() => {
-          const target = document.getElementById(viewBtn.dataset.scrollTo);
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          scrollToEl(document.getElementById(viewBtn.dataset.scrollTo));
         });
       }
     });
@@ -2776,6 +2873,12 @@ a { color: inherit; }
     $all('.download-buttons .btn').forEach((btn) => {
       btn.addEventListener('click', () => handleDownload(btn.dataset.format));
     });
+    if (els.generateCtaBtn) {
+      els.generateCtaBtn.addEventListener('click', () => {
+        scheduleUpdate(true);
+        scrollToEl(els.previewCard);
+      });
+    }
   }
 
   function wireHistoryView() {
@@ -2814,14 +2917,41 @@ a { color: inherit; }
       'patternGroup', 'eyeGroup', 'ecGroup', 'frameGroup', 'qrSize', 'qrMargin',
       'logoPreview', 'logoUploadBtn', 'logoRemoveBtn', 'logoInput', 'logoControls',
       'logoSize', 'logoMargin', 'logoBackdrop', 'frameCustomWrap', 'frameCustomText',
-      'previewFrame', 'qrCanvasWrap', 'frameCaption', 'previewTypeLabel', 'previewContentPreview',
-      'scanWarning', 'resetBtn', 'saveHistoryBtn', 'copyPayloadBtn', 'copyImageBtn',
+      'previewFrame', 'previewCard', 'qrCanvasWrap', 'frameCaption', 'previewTypeLabel', 'previewContentPreview',
+      'scanWarning', 'resetBtn', 'saveHistoryBtn', 'copyPayloadBtn', 'copyImageBtn', 'generateCtaBtn',
       'excludeFromHistory', 'exportConfigBtn', 'importConfigBtn', 'importConfigFile',
       'historyFilter', 'clearHistoryBtn', 'historyList', 'historyEmpty', 'favoritesEmpty',
       'toastRegion'
     ];
     ids.forEach((id) => { els[id] = document.getElementById(id); });
     els.historyItemTemplate = document.getElementById('historyItemTemplate');
+  }
+
+  function injectSegmentedIndicators() {
+    $all('.segmented').forEach((seg) => {
+      if (seg.querySelector('.segmented-indicator')) return;
+      const ind = document.createElement('span');
+      ind.className = 'segmented-indicator';
+      ind.setAttribute('aria-hidden', 'true');
+      seg.prepend(ind);
+    });
+  }
+
+  function setupScrollReveal() {
+    const targets = $all('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-revealed'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach((el) => observer.observe(el));
   }
 
   function init() {
@@ -2839,6 +2969,7 @@ a { color: inherit; }
     const canCopyImage = !!(navigator.clipboard && window.ClipboardItem);
     if (canCopyImage && els.copyImageBtn) els.copyImageBtn.hidden = false;
 
+    injectSegmentedIndicators();
     wireNav();
     wireTypeGrid();
     wireContentForm();
@@ -2846,11 +2977,14 @@ a { color: inherit; }
     wirePreviewActions();
     wireHistoryView();
     wireImportExport();
+    setupScrollReveal();
+    window.addEventListener('resize', debounce(positionAllSegmentedIndicators, 150));
 
     const initialView = (location.hash || '').replace('#', '') || 'generator';
     setView(initialView);
     renderHistory();
     scheduleUpdate(true);
+    requestAnimationFrame(positionAllSegmentedIndicators);
   }
 
   if (document.readyState === 'loading') {
